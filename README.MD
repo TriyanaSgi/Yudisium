@@ -16,7 +16,7 @@ This repository contains a Laravel 11 template that comes pre-configured with au
 ### Installation Steps
 1. Clone the repository:
     ```bash
-    git clone https://github.com/vickymaulana/laravel11-stisla.git
+    git clone https://github.com/TriyanaSgi/Yudisium.git
     ```
 
 2. Navigate into the project directory:
