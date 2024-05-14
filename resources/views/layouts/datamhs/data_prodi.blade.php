@@ -29,7 +29,7 @@
             <div class="table-responsive">
                     <div class="row mb-3">
                         <div class="col-md-6">
-                            <a href="" class="btn btn-primary mb-3">Tambah Data</a>
+                            <a href="datamhs/prodi_cr" class="btn btn-primary mb-3">Tambah Data</a>
                             <form action="" method="GET">
                                 <div class="input-group">
                                     <input type="text" name="search" class="form-control" placeholder="Cari Berdasarkan Nama Prodi...">
