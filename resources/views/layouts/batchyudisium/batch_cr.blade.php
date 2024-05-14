@@ -27,7 +27,7 @@
             <div class="section-body">
 
                     <div class="form-group">
-                        <label for="nama_prodi">NIM Mahasiswa</label>
+                        <label for="nama_prodi">Id Batch</label>
                         <input type="number" name="nama_prodi" id="nama_prodi" class="form-control">
                     </div>
 
@@ -37,39 +37,28 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="nama_kaprodi">Tempat Lahir</label>
+                        <label for="nama_kaprodi">Program Studi</label>
                         <input type="text" name="nama_kaprodi" id="nama_kaprodi" class="form-control">
                     </div>
 
                     <div class="form-group">
-                        <label for="tgl_sk_prodi">Tanggal Lahir</label>
-                        <input type="date" name="tgl_sk_prodi" id="tgl_sk_prodi" class="form-control">
+                        <label for="tgl_sk_prodi">Jumlah Sks</label>
+                        <input type="text" name="tgl_sk_prodi" id="tgl_sk_prodi" class="form-control">
                     </div>
                     <div class="form-group">
-                        <label for="tgl_penetapan_akreditasi">Ipk</label>
+                        <label for="tgl_penetapan_akreditasi">Indeks Prestasi Kumulatif</label>
                         <input type="number" name="tgl_penetapan_akreditasi" id="tgl_penetapan_akreditasi" class="form-control">
                     </div>
 
                     <div class="form-group">
-                        <label for="tgl_penetapan_akreditasi">Jumlah Semester Aktif</label>
+                        <label for="tgl_penetapan_akreditasi">Status</label>
                         <input type="number" name="tgl_penetapan_akreditasi" id="tgl_penetapan_akreditasi" class="form-control">
                     </div>
 
                     <div class="form-group">
-                        <label for="jumlah_dosen">Jumlah Semester Cuti</label>
+                        <label for="jumlah_dosen">Tahun Angkatan</label>
                         <input type="number" name="jumlah_semester" id="" class="form-control">
                     </div>
-
-                    <div class="form-group">
-                        <label for="jumlah_mahasiswa">Kode Prodi</label>
-                        <input type="number" name="jumlah_mahasiswa" id="jumlah_mahasiswa" class="form-control">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="jumlah_mahasiswa">Nama Prodi</label>
-                        <input type="text" name="jumlah_mahasiswa" id="jumlah_mahasiswa" class="form-control">
-                    </div>
-
 
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>

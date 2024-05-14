@@ -2,10 +2,10 @@
 <div class="main-sidebar sidebar-style-2">
     <aside id="sidebar-wrapper">
         <div class="sidebar-brand">
-        <a href="">PERSYARATAN YUDISIUM</a>
+        <a href="">SISPEK</a>
         </div>
         <div class="sidebar-brand sidebar-brand-sm">
-        <a href="">PERSYARATAN YUDISIUM</a>
+        <a href="">SISPEK</a>
         </div>
         <ul class="sidebar-menu">
             <li class="menu-header">Dashboard</li>
@@ -25,16 +25,16 @@
             </li>
             <li class="menu-header">Starter</li>
             <li class="{{ Request::is('batchyudisium/data_batch_yudisium') ?  : '' }}">
-                <a class="nav-link" href="{{ url('batchyudisium/data_batch_yudisium') }}"><i class="far fa-square"></i> <span>Batch Yudisium</span></a>
+                <a class="nav-link" href="{{ url('batchyudisium/data_batch_yudisium') }}"><i class="fas fa-university"></i> <span>Batch Yudisium</span></a>
             </li>
             <li class="{{ Request::is('data_mhs') ?  : '' }}">
-                <a class="nav-link" href="{{ url('datamhs/data_mhs') }}"><i class="far fa-square"></i> <span> Data Mahasiswa </span></a>
+                <a class="nav-link" href="{{ url('datamhs/data_mhs') }}"><i class="fas fa-university"></i> <span> Data Mahasiswa </span></a>
             </li>
             <li class="{{ Request::is('data_prodi') ?  : '' }}">
-                <a class="nav-link" href="{{ url('datamhs/data_prodi') }}"><i class="far fa-square"></i> <span> Data Prodi </span></a>
+                <a class="nav-link" href="{{ url('datamhs/data_prodi') }}"><i class="fas fa-university"></i> <span> Data Prodi </span></a>
             </li>
-            <li class="{{ Request::is('data_pt') ?  : '' }}"> 
-                <a class="nav-link" href="{{ url('datamhs/data_pt') }}"><i class="far fa-square"></i> <span> Data Perguruan Tinggi </span></a>
+            <li class="{{ Request::is('data_pt') ?  : '' }}">
+                <a class="nav-link" href="{{ url('datamhs/data_pt') }}"><i class="fas fa-university"></i> <span> Data Perguruan Tinggi </span></a>
             </li>
 
         </ul>

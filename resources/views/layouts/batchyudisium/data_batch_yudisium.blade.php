@@ -48,7 +48,7 @@
                                 <th>Tahun Angkatan</th>
                                 <th>Program Studi</th>
                                 <th>Status</th>
-                                <th>Sks</th>
+                                <th>Jumlah Sks</th>
                                 <th>Indeks Prestasi Kumulatif</th>
 
                             </tr>
