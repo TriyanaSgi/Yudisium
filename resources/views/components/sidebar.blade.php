@@ -21,8 +21,8 @@
                 <a class="nav-link" href="{{ url('profile/change-password') }}"><i class="fas fa-key"></i> <span>Ganti Password</span></a>
             </li>
             <li class="menu-header">Starter</li>
-            <li class="{{ Request::is('blank-page') ?  : '' }}">
-                <a class="nav-link" href="{{ url('blank-page') }}"><i class="far fa-square"></i> <span>Batch Yudisium</span></a>
+            <li class="{{ Request::is('batchyudisium/data_batch_yudisium') ?  : '' }}">
+                <a class="nav-link" href="{{ url('batchyudisium/data_batch_yudisium') }}"><i class="far fa-square"></i> <span>Batch Yudisium</span></a>
             </li>
             <li class="{{ Request::is('data_mhs') ?  : '' }}">
                 <a class="nav-link" href="{{ url('datamhs/data_mhs') }}"><i class="far fa-square"></i> <span> Data Mahasiswa </span></a>
