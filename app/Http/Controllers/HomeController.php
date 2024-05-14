@@ -45,6 +45,15 @@ class HomeController extends Controller
     {
         return view('layouts.datamhs.data_prodi');
     }
+
+    public function prodi_cr()
+    {
+        return view('layouts.datamhs.prodi_cr');
+    }
+
+
+
+
     public function data_pt()
     {
         return view('layouts.datamhs.data_pt');
