@@ -30,7 +30,7 @@
             <li class="{{ Request::is('data_prodi') ?  : '' }}">
                 <a class="nav-link" href="{{ url('datamhs/data_prodi') }}"><i class="far fa-square"></i> <span> Data Prodi </span></a>
             </li>
-            <li class="{{ Request::is('data_pt') ?  : '' }}">
+            <li class="{{ Request::is('data_pt') ?  : '' }}"> 
                 <a class="nav-link" href="{{ url('datamhs/data_pt') }}"><i class="far fa-square"></i> <span> Data Perguruan Tinggi </span></a>
             </li>
 

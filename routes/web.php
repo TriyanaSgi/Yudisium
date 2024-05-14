@@ -16,8 +16,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/profile/change-password', [ProfileController::class, 'changepassword'])->name('profile.change-password');
     Route::put('/profile/password', [ProfileController::class, 'password'])->name('profile.password');
     Route::get('/blank-page', [App\Http\Controllers\HomeController::class, 'blank'])->name('blank');
-    Route::get('/datamhs/data_mhs/data_mhs_cr', [App\Http\Controllers\HomeController::class, 'data_mhs'])->name('data_mhs');
-    Route::get('/datamhs/data_mhs', [App\Http\Controllers\HomeController::class, 'data_mhs_cr'])->name('data_mhs_cr');
+    Route::get('/datamhs/data_mhs', [App\Http\Controllers\HomeController::class, 'data_mhs'])->name('data_mhs');
+    Route::get('/datamhs/data_mhs_cr', [App\Http\Controllers\HomeController::class, 'data_mhs_cr'])->name('data_mhs_cr');
     Route::get('/datamhs/data_prodi', [App\Http\Controllers\HomeController::class, 'data_prodi'])->name('data_prodi');
     Route::get('/datamhs/data_pt', [App\Http\Controllers\HomeController::class, 'data_pt'])->name('data_pt');
     Route::get('/batchyudisium/data_batch_yudisium', [App\Http\Controllers\HomeController::class, 'data_batch_yudisium'])->name('data_batch_yudisium');

@@ -10,7 +10,7 @@
     <div class="main-content">
         <section class="section">
             <div class="section-header">
-                <h1>Data Prodi</h1>
+                <h1>Data Mahasiswa</h1>
             </div>
 
 
@@ -29,7 +29,7 @@
             <div class="table-responsive">
                     <div class="row mb-3">
                         <div class="col-md-6">
-                            <a href="{{ url('datamhs.data_mhs_cr') }}" class="btn btn-primary mb-3">Tambah Data</a>
+                            <a href="{{ url('datamhs/data_mhs_cr') }}" class="btn btn-primary mb-3">Tambah Data</a>
                             <form action="" method="GET">
                                 <div class="input-group">
                                     <input type="text" name="search" class="form-control" placeholder="Cari Berdasarkan Nama Prodi...">
