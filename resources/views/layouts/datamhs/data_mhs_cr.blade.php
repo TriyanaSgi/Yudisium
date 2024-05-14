@@ -57,7 +57,7 @@
 
                     <div class="form-group">
                         <label for="jumlah_dosen">Jumlah Semester Cuti</label>
-                        <input type="number" name="jumlah_dosen" id="jumlah_dosen" class="form-control">
+                        <input type="number" name="jumlah_semester" id="" class="form-control">
                     </div>
 
                     <div class="form-group">
@@ -66,8 +66,8 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="image_prodi">Nama Prodi</label>
-                        <input type="number" name="image_prodi" id="image_prodi" class="form-control-file">
+                        <label for="jumlah_mahasiswa">Nama Prodi</label>
+                        <input type="text" name="jumlah_mahasiswa" id="jumlah_mahasiswa" class="form-control">
                     </div>
 
 
