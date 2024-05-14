@@ -20,8 +20,8 @@
             <li class="{{ Request::is('profile/change-password') ? 'active' : '' }}">
                 <a class="nav-link" href="{{ url('profile/change-password') }}"><i class="fas fa-key"></i> <span>Ganti Password</span></a>
             </li>
-            <li class="{{ Request::is('profile/change-password') ? 'active' : '' }}">
-                <a class="nav-link" href="{{ url('profile/change-password') }}"><i class="fas fa-key"></i> <span>Hak Akses</span></a>
+            <li class="{{ Request::is('hakakses/index') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ url('hakakses/index') }}"><i class="fas fa-key"></i> <span>Hak Akses</span></a>
             </li>
             <li class="menu-header">Starter</li>
             <li class="{{ Request::is('batchyudisium/data_batch_yudisium') ?  : '' }}">
