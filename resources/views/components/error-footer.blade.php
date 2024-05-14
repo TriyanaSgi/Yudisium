@@ -1,3 +1,3 @@
 <div class="simple-footer mt-5">
-    Copyright &copy; Stisla 2018
+    Copyright &copy; Yudisium 2024
 </div>

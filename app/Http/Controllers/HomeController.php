@@ -30,4 +30,27 @@ class HomeController extends Controller
     {
         return view('layouts.blank-page');
     }
+
+    public function data_mhs()
+    {
+        return view('layouts.datamhs.data_mhs');
+    }
+
+    public function data_mhs_cr()
+    {
+        return view('layouts.datamhs.data_mhs_cr');
+    }
+
+    public function data_prodi()
+    {
+        return view('layouts.datamhs.data_prodi');
+    }
+    public function data_pt()
+    {
+        return view('layouts.datamhs.data_pt');
+    }
+    public function data_batch_yudisium()
+    {
+        return view('layouts.batchyudisium.data_batch_yudisium');
+    }
 }
