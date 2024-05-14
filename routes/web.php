@@ -21,4 +21,5 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/datamhs/data_prodi', [App\Http\Controllers\HomeController::class, 'data_prodi'])->name('data_prodi');
     Route::get('/datamhs/data_pt', [App\Http\Controllers\HomeController::class, 'data_pt'])->name('data_pt');
     Route::get('/batchyudisium/data_batch_yudisium', [App\Http\Controllers\HomeController::class, 'data_batch_yudisium'])->name('data_batch_yudisium');
+    Route::get('/batchyudisium/batch_cr', [App\Http\Controllers\HomeController::class, 'batch_cr'])->name('batch_cr');
 });

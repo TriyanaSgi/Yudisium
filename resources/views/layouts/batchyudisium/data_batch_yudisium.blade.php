@@ -29,7 +29,7 @@
             <div class="table-responsive">
                     <div class="row mb-3">
                         <div class="col-md-6">
-                            <a href="{{ url('batchyudisium.data_batch_yudisium') }}" class="btn btn-primary mb-3">Tambah Batch</a>
+                            <a href="{{ url('batchyudisium/batch_cr') }}" class="btn btn-primary mb-3">Tambah Batch</a>
                             <form action="" method="GET">
                                 <div class="input-group">
                                     <input type="text" name="search" class="form-control" placeholder="Cari Berdasarkan Nama ...">

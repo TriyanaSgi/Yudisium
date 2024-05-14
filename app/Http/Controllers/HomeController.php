@@ -53,4 +53,9 @@ class HomeController extends Controller
     {
         return view('layouts.batchyudisium.data_batch_yudisium');
     }
+
+    public function batch_cr()
+    {
+        return view('layouts.batchyudisium.batch_cr');
+    }
 }
