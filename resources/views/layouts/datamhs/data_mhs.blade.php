@@ -43,15 +43,17 @@
                     <table class="table table-bordered">
                         <thead>
                             <tr>
+                                <th>ID Batch</th>
                                 <th>Nim Mahasiswa</th>
                                 <th>Nama Mahasiswa</th>
                                 <th>Tempat Lahir</th>
                                 <th>Tanggal Lahir</th>
                                 <th>Ipk</th>
-                                <th>Jumlah Semester Aktif</th>
-                                <th>Jumlah Semester Cuti</th>
+                                <th>Tahun Masuk</th>
+                                <th>Jurusan</th>
                                 <th>Kode Prodi</th>
                                 <th>Nama Prodi</th>
+                                <th>Asal Perguruan Tinggi</th>
 
                             </tr>
                         </thead>

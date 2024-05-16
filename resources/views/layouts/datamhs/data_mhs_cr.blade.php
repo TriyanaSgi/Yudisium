@@ -70,6 +70,11 @@
                         <input type="text" name="jumlah_mahasiswa" id="jumlah_mahasiswa" class="form-control">
                     </div>
 
+                    <div class="form-group">
+                        <label for="jumlah_mahasiswa">Asal Perguruan Tinggi</label>
+                        <input type="text" name="jumlah_mahasiswa" id="jumlah_mahasiswa" class="form-control">
+                    </div>
+
 
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>

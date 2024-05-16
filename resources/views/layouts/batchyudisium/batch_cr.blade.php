@@ -52,7 +52,7 @@
 
                     <div class="form-group">
                         <label for="tgl_penetapan_akreditasi">Status</label>
-                        <input type="number" name="tgl_penetapan_akreditasi" id="tgl_penetapan_akreditasi" class="form-control">
+                        <input type="Text" name="tgl_penetapan_akreditasi" id="tgl_penetapan_akreditasi" class="form-control">
                     </div>
 
                     <div class="form-group">
