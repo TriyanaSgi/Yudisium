@@ -58,6 +58,11 @@ class HomeController extends Controller
     {
         return view('layouts.datamhs.data_pt');
     }
+
+    public function pt_cr()
+    {
+        return view('layouts.datamhs.pt_cr');
+    }
     public function data_batch_yudisium()
     {
         return view('layouts.batchyudisium.data_batch_yudisium');

@@ -8,10 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class mahasiswa extends Model
 {
     use HasFactory;
-    
+
     protected $table = 'mahasiswa';
     protected $primaryKey = 'id_batch';
-    
+
     protected $fillable = [
         'id_batch',
         'nim_mhs',
@@ -19,8 +19,8 @@ class mahasiswa extends Model
         'tempat_lahir',
         'tgl_lahir',
         'ipk',
-        'jml_smtr_aktif',
-        'jml_cuti',
+        'tahun_masuk',
+        'jurusan',
         'kode-prodi',
         'nama_prodi',
     ];
