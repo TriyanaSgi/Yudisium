@@ -2,11 +2,19 @@
 <div class="main-sidebar sidebar-style-2">
     <aside id="sidebar-wrapper">
         <div class="sidebar-brand">
-        <a href="">SISPEK</a>
+            <div class="card-header text-center d-flex justify-content-center">
+                <div class="d-flex justify-content-center">
+                    <img src="{{asset('img/avatar/image.png')}}"alt="Sispek" class="img-fluid" style="width: 110px;">
+        </div>
+            </div>
         </div>
         <div class="sidebar-brand sidebar-brand-sm">
-        <a href="">SISPEK</a>
+            <div class="card-header text-center d-flex justify-content--center">
+                <div class="d-flex justify-content-center">
+                    <img src="{{asset('img/avatar/image.png')}}"alt="sispek" class="img-fluid mt-2" style="width: 40px;">
         </div>
+        </div>
+    </div>
         <ul class="sidebar-menu">
             <li class="menu-header">Dashboard</li>
             <li class="{{ Request::is('home') ? 'active' : '' }}">
