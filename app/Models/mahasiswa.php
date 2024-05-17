@@ -23,5 +23,6 @@ class mahasiswa extends Model
         'jurusan',
         'kode-prodi',
         'nama_prodi',
+        'asal_pt',
     ];
 }
