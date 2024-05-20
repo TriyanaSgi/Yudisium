@@ -87,7 +87,7 @@ https://templatemo.com/tm-543-breezed
           <!-- Item -->
           <div class="item">
             <div class="img-fill">
-                <img src="assets/images/avatar01.png" alt="">
+                <img src="assets/images/avatar03.png" alt="">
                 <div class="text-content">
                   <h3>SISPEK YUDISIUM</h3>
                   <h5>Sistem Pemeriksaan Persyaratan Kelulusan Yudisium</h5>

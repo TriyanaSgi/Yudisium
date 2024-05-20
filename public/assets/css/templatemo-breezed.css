@@ -778,6 +778,7 @@ banner
   overflow: hidden;
   position: relative;
   text-align: center
+ 
 }
 
 .img-fill img {
@@ -816,7 +817,7 @@ banner
 
 /* ==== Slider Style === */
 .Modern-Slider .item .img-fill{
-  height:95vh;
+  height:100vh;
   background:#000;
 }
 
@@ -1313,7 +1314,7 @@ contact
 
 .contact-form ::-webkit-input-placeholder { /* Edge */
   color: #7a7a7a;
-}
+} 
 
 .contact-form :-ms-input-placeholder { /* Internet Explorer 10-11 */
   color: #7a7a7a;
