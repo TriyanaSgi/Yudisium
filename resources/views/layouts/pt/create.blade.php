@@ -27,19 +27,15 @@
             <div class="section-body">
 
                     <div class="form-group">
-                        <label for="nama_prodi">Nama Perguruan Tinggi</label>
-                        <input type="text" name="nama_prodi" id="nama_prodi" class="form-control">
+                        <label for="kd_pt">Nama Perguruan Tinggi</label>
+                        <input type="number" name="kd_pt" id="kd_pt" class="form-control">
                     </div>
 
                     <div class="form-group">
-                        <label for="wilayah">Kode Perguruan Tinggi</label>
-                        <input type="number" name="wilayah" id="wilayah" class="form-control">
+                        <label for="nama_pt">Kode Perguruan Tinggi</label>
+                        <input type="text" name="nama_pt" id="nama_pt" class="form-control">
                     </div>
 
-                    <div class="form-group">
-                        <label for="wilayah">Alamat</label>
-                        <input type="text" name="wilayah" id="wilayah" class="form-control">
-                    </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
             </div>

@@ -27,37 +27,37 @@
             <div class="section-body">
 
                     <div class="form-group">
-                        <label for="nama_prodi">Id Batch</label>
-                        <input type="number" name="nama_prodi" id="nama_prodi" class="form-control">
+                        <label for="id_batch">Id Batch</label>
+                        <input type="number" name="id_batch" id="id_batch" class="form-control">
                     </div>
 
                     <div class="form-group">
-                        <label for="wilayah">Nama Mahasiswa</label>
-                        <input type="text" name="wilayah" id="wilayah" class="form-control">
+                        <label for="nama_mhs">Nama Mahasiswa</label>
+                        <input type="text" name="nama_mhs" id="nama_mhs" class="form-control">
                     </div>
 
                     <div class="form-group">
-                        <label for="nama_kaprodi">Program Studi</label>
-                        <input type="text" name="nama_kaprodi" id="nama_kaprodi" class="form-control">
+                        <label for="tahun_angkatan">Tahun Angkatan</label>
+                        <input type="number" name="tahun_angkatan" id="tahun_angkatan" class="form-control">
                     </div>
 
                     <div class="form-group">
-                        <label for="tgl_sk_prodi">Jumlah Sks</label>
-                        <input type="text" name="tgl_sk_prodi" id="tgl_sk_prodi" class="form-control">
+                        <label for="program_studi">Program Studi</label>
+                        <input type="text" name="program_studi" id="program_studi" class="form-control">
                     </div>
                     <div class="form-group">
-                        <label for="tgl_penetapan_akreditasi">Indeks Prestasi Kumulatif</label>
-                        <input type="number" name="tgl_penetapan_akreditasi" id="tgl_penetapan_akreditasi" class="form-control">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="tgl_penetapan_akreditasi">Status</label>
-                        <input type="Text" name="tgl_penetapan_akreditasi" id="tgl_penetapan_akreditasi" class="form-control">
+                        <label for="status">Status</label>
+                        <input type="text" name="status" id="status" class="form-control">
                     </div>
 
                     <div class="form-group">
-                        <label for="jumlah_dosen">Tahun Angkatan</label>
-                        <input type="number" name="jumlah_semester" id="" class="form-control">
+                        <label for="sks">SKS</label>
+                        <input type="number" name="sks" id="sks" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ipk">Indeks Prestasi Kumulatif</label>
+                        <input type="number" name="ipk" id="ipk" class="form-control">
                     </div>
 
                     <button type="submit" class="btn btn-primary">Submit</button>

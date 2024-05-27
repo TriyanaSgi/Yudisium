@@ -29,11 +29,12 @@ Route::middleware(['auth'])->group(function () {
 
 
 
-    Route::get('/batchyudisium/data_batch_yudisium', [App\Http\Controllers\HomeController::class, 'data_batch_yudisium'])->name('data_batch_yudisium');
-    Route::get('/batchyudisium/batch_cr', [App\Http\Controllers\HomeController::class, 'batch_cr'])->name('batch_cr');
-    Route::get('/batch/edit/{id}', [App\Http\Controllers\batchyudisiumController::class, 'edit'])->name('batch.edit');
-    Route::put('/batch/update/{id}', [App\Http\Controllers\batchyudisiumController::class, 'update'])->name('batch.update');
-    Route::delete('/batch/delete/{id}', [App\Http\Controllers\batchyudisiumController::class, 'destroy'])->name('batch.delete');
+    Route::get('/batch', [App\Http\Controllers\BatchController::class, 'index'])->name('batch.index');
+    Route::get('/batch/create', [App\Http\Controllers\BatchController::class, 'create'])->name('batch.create');
+    Route::post('/batch/store', [App\Http\Controllers\BatchController::class, 'store'])->name('batch.store');
+    Route::get('/batch/edit/{id}', [App\Http\Controllers\BatchController::class, 'edit'])->name('batch.edit');
+    Route::put('/batch/update/{id}', [App\Http\Controllers\BatchController::class, 'update'])->name('batch.update');
+    Route::delete('/batch/delete/{id}', [App\Http\Controllers\BatchController::class, 'destroy'])->name('batch.delete');
 
 
 });
