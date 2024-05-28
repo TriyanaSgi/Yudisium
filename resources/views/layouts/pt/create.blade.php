@@ -27,12 +27,12 @@
             <div class="section-body">
 
                     <div class="form-group">
-                        <label for="kd_pt">Nama Perguruan Tinggi</label>
+                        <label for="kd_pt">Kode Perguruan Tinggi</label>
                         <input type="number" name="kd_pt" id="kd_pt" class="form-control">
                     </div>
 
                     <div class="form-group">
-                        <label for="nama_pt">Kode Perguruan Tinggi</label>
+                        <label for="nama_pt">Nama Perguruan Tinggi</label>
                         <input type="text" name="nama_pt" id="nama_pt" class="form-control">
                     </div>
 

@@ -48,7 +48,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($batch as $item)
+                            @foreach ($data_pt as $item)
                                 <tr>
                                     <td>{{ $item->kd_pt }}</td>
                                     <td>{{ $item->nama_pt }}</td>
