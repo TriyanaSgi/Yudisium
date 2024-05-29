@@ -14,7 +14,7 @@ class batch extends Model
     
     protected $fillable = [
         'id_batch',
-        'nama_mahasiswa',
+        'nama_mhs',
         'tahun_angkatan',
         'program_studi',
         'status',

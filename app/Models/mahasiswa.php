@@ -19,10 +19,9 @@ class mahasiswa extends Model
         'tempat_lahir',
         'tgl_lahir',
         'ipk',
-        'tahun_masuk',
-        'jurusan',
-        'kode-prodi',
+        'jml_smtr_aktif',
+        'jml_cuti',
+        'kd_prodi',
         'nama_prodi',
-        'asal_pt',
     ];
 }

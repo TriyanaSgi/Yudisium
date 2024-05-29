@@ -16,24 +16,34 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/profile/change-password', [ProfileController::class, 'changepassword'])->name('profile.change-password');
     Route::put('/profile/password', [ProfileController::class, 'password'])->name('profile.password');
     Route::get('/blank-page', [App\Http\Controllers\HomeController::class, 'blank'])->name('blank');
-    Route::get('/datamhs/data_mhs', [App\Http\Controllers\HomeController::class, 'data_mhs'])->name('data_mhs');
-    Route::get('/datamhs/data_mhs_cr', [App\Http\Controllers\HomeController::class, 'data_mhs_cr'])->name('data_mhs_cr');
 
 
-    Route::get('/datamhs/data_prodi', [App\Http\Controllers\HomeController::class, 'data_prodi'])->name('data_prodi');
-    Route::get('/datamhs/prodi_cr', [App\Http\Controllers\HomeController::class, 'prodi_cr'])->name('prodi_cr');
+    Route::get('/batch', [App\Http\Controllers\BatchController::class, 'index'])->name('batch.index');
+    Route::get('/batch/create', [App\Http\Controllers\BatchController::class, 'create'])->name('batch.create');
+    Route::post('/batch/store', [App\Http\Controllers\BatchController::class, 'store'])->name('batch.store');
+    Route::get('/batch/edit/{id}', [App\Http\Controllers\BatchController::class, 'edit'])->name('batch.edit');
+    Route::put('/batch/update/{id}', [App\Http\Controllers\BatchController::class, 'update'])->name('batch.update');
+    Route::delete('/batch/delete/{id}', [App\Http\Controllers\BatchController::class, 'destroy'])->name('batch.delete');
 
+    Route::get('/mahasiswa', [App\Http\Controllers\MahasiswaController::class, 'index'])->name('mahasiswa.index');
+    Route::get('/mahasiswa/create', [App\Http\Controllers\MahasiswaController::class, 'create'])->name('mahasiswa.create');
+    Route::post('/mahasiswa/store', [App\Http\Controllers\MahasiswaController::class, 'store'])->name('mahasiswa.store');
+    Route::get('/mahasiswa/edit/{id}', [App\Http\Controllers\MahasiswaController::class, 'edit'])->name('mahasiswa.edit');
+    Route::put('/mahasiswa/update/{id}', [App\Http\Controllers\MahasiswaController::class, 'update'])->name('mahasiswa.update');
+    Route::delete('/mahasiswa/delete/{id}', [App\Http\Controllers\MahasiswaController::class, 'destroy'])->name('mahasiswa.delete');
 
-    Route::get('/datamhs/data_pt', [App\Http\Controllers\HomeController::class, 'data_pt'])->name('data_pt');
-    Route::get('/datamhs/pt_cr', [App\Http\Controllers\HomeController::class, 'pt_cr'])->name('pt_cr');
+    Route::get('/prodi', [App\Http\Controllers\ProdiController::class, 'index'])->name('prodi.index');
+    Route::get('/prodi/create', [App\Http\Controllers\ProdiController::class, 'create'])->name('prodi.create');
+    Route::post('/prodi/store', [App\Http\Controllers\ProdiController::class, 'store'])->name('prodi.store');
+    Route::get('/prodi/edit/{id}', [App\Http\Controllers\ProdiController::class, 'edit'])->name('prodi.edit');
+    Route::put('/prodi/update/{id}', [App\Http\Controllers\ProdiController::class, 'update'])->name('prodi.update');
+    Route::delete('/prodi/delete/{id}', [App\Http\Controllers\ProdiController::class, 'destroy'])->name('prodi.delete');
 
-
-
-    Route::get('/batchyudisium/data_batch_yudisium', [App\Http\Controllers\HomeController::class, 'data_batch_yudisium'])->name('data_batch_yudisium');
-    Route::get('/batchyudisium/batch_cr', [App\Http\Controllers\HomeController::class, 'batch_cr'])->name('batch_cr');
-    Route::get('/batch/edit/{id}', [App\Http\Controllers\batchyudisiumController::class, 'edit'])->name('batch.edit');
-    Route::put('/batch/update/{id}', [App\Http\Controllers\batchyudisiumController::class, 'update'])->name('batch.update');
-    Route::delete('/batch/delete/{id}', [App\Http\Controllers\batchyudisiumController::class, 'destroy'])->name('batch.delete');
-
+    Route::get('/pt', [App\Http\Controllers\PtController::class, 'index'])->name('pt.index');
+    Route::get('/pt/create', [App\Http\Controllers\PtController::class, 'create'])->name('pt.create');
+    Route::post('/pt/store', [App\Http\Controllers\PtController::class, 'store'])->name('pt.store');
+    Route::get('/pt/edit/{id}', [App\Http\Controllers\PtController::class, 'edit'])->name('pt.edit');
+    Route::put('/pt/update/{id}', [App\Http\Controllers\PtController::class, 'update'])->name('pt.update');
+    Route::delete('/pt/delete/{id}', [App\Http\Controllers\PtController::class, 'destroy'])->name('pt.delete');
 
 });

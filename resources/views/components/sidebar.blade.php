@@ -32,17 +32,17 @@
                 <a class="nav-link" href="{{ url('hakakses/index') }}"><i class="fas fa-key"></i> <span>Hak Akses</span></a>
             </li>
             <li class="menu-header">Starter</li>
-            <li class="{{ Request::is('batchyudisium/data_batch_yudisium') ?  : '' }}">
-                <a class="nav-link" href="{{ url('batchyudisium/data_batch_yudisium') }}"><i class="fas fa-university"></i> <span>Batch Yudisium</span></a>
+            <li class="{{ Request::is('batch') ?  : 'active' }}">
+                <a class="nav-link" href="{{ url('batch') }}"><i class="fas fa-university"></i> <span>Batch Yudisium</span></a>
             </li>
-            <li class="{{ Request::is('data_mhs') ?  : '' }}">
-                <a class="nav-link" href="{{ url('datamhs/data_mhs') }}"><i class="fas fa-university"></i> <span> Data Mahasiswa </span></a>
+            <li class="{{ Request::is('mahasiswa') ?  : '' }}">
+                <a class="nav-link" href="{{ url('mahasiswa') }}"><i class="fas fa-university"></i> <span> Data Mahasiswa </span></a>
             </li>
-            <li class="{{ Request::is('data_prodi') ?  : '' }}">
-                <a class="nav-link" href="{{ url('datamhs/data_prodi') }}"><i class="fas fa-university"></i> <span> Data Prodi </span></a>
+            <li class="{{ Request::is('prodi') ?  : '' }}">
+                <a class="nav-link" href="{{ url('prodi') }}"><i class="fas fa-university"></i> <span> Data Prodi </span></a>
             </li>
-            <li class="{{ Request::is('data_pt') ?  : '' }}">
-                <a class="nav-link" href="{{ url('datamhs/data_pt') }}"><i class="fas fa-university"></i> <span> Data Perguruan Tinggi </span></a>
+            <li class="{{ Request::is('pt') ?  : '' }}">
+                <a class="nav-link" href="{{ url('pt') }}"><i class="fas fa-university"></i> <span> Data Perguruan Tinggi </span></a>
             </li>
 
         </ul>
