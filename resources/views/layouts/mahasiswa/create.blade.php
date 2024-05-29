@@ -25,7 +25,8 @@
             @endif
 
             <div class="section-body">
-
+            <form action="{{ route('mahasiswa.store') }}" method="POST">
+                    @csrf
                     <div class="form-group">
                         <label for="id_batch">ID Batch</label>
                         <input type="number" name="id_batch" id="id_batch" class="form-control">
@@ -61,7 +62,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="jml_cuti">Jumlah Semester Cuti</label>
+                        <label for="jml_cuti">Jumlah Cuti</label>
                         <input type="number" name="jml_cuti" id="jml_cuti" class="form-control">
                     </div>
 

@@ -39,21 +39,18 @@ class PtController extends Controller
             'nama_pt' => 'required',
         ]);
 
-        try {
-            $data_pt = new PtController();
+        
+            $data_pt = new pt();
             $data_pt->kode_pt = $request->kode_pt;
             $data_pt->nama_pt = $request->nama_pt;
-            $data_pt->save();
-
-            $request->session()->flash('message', 'Data Berhasil Disimpan!');
-
+            if ($data_pt->save()) {
+                return redirect()->route('pt.index')->with('message', 'Data SDM Berhasil Dibuat.');
+            } else {
+                return redirect()->back()->with('error', 'Gagal Menambah Data SDM.');
+            }
             return redirect()->route('pt.index');
-        } catch (\Exception $e) {
-            $request->session()->flash('error', 'Gagal Menambahkan data.');
-
-            return redirect()->back();
         }
-    }
+    
 
     /**
      * Display the specified resource.

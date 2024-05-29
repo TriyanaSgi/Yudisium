@@ -25,7 +25,8 @@
             @endif
 
             <div class="section-body">
-
+            <form action="{{ route('pt.store') }}" method="POST">
+                    @csrf
                     <div class="form-group">
                         <label for="kode_pt">Kode Perguruan Tinggi</label>
                         <input type="number" name="kode_pt" id="kode_pt" class="form-control">

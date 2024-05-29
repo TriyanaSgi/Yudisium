@@ -44,8 +44,8 @@ class BatchController extends Controller
             'ipk' => 'required',
         ]);
 
-        try {
-            $batch = new BatchController();
+
+            $batch = new batch();
             $batch->id_batch = $request->id_batch;
             $batch->nama_mhs = $request->nama_mhs;
             $batch->tahun_angkatan = $request->tahun_angkatan;
@@ -53,17 +53,13 @@ class BatchController extends Controller
             $batch->status = $request->status;
             $batch->sks = $request->sks;
             $batch->ipk = $request->ipk;
-            $batch->save();
-
-            $request->session()->flash('message', 'Data Berhasil Disimpan!');
-
+            if ($batch->save()) {
+                return redirect()->route('batch.index')->with('message', 'Data Batch Berhasil Dibuat.');
+            } else {
+                return redirect()->back()->with('error', 'Gagal Menambah Data Batch.');
+            }
             return redirect()->route('batch.index');
-        } catch (\Exception $e) {
-            $request->session()->flash('error', 'Gagal Menambahkan data.');
-
-            return redirect()->back();
         }
-    }
 
     /**
      * Display the specified resource.
@@ -79,7 +75,7 @@ class BatchController extends Controller
     public function edit($id)
     {
         //
-        $data_pt = batch::find($id);
+        $batch = batch::find($id);
 
         return view('layouts.batch.edit', compact('batch'));    
     }

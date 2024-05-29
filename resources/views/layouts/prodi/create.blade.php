@@ -25,7 +25,8 @@
             @endif
 
             <div class="section-body">
-
+            <form action="{{ route('prodi.store') }}" method="POST">
+                    @csrf
                     <div class="form-group">
                         <label for="nama_prodi">Nama prodi</label>
                         <input type="text" name="nama_prodi" id="nama_prodi" class="form-control">

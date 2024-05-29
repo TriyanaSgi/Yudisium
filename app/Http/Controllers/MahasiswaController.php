@@ -47,8 +47,7 @@ class MahasiswaController extends Controller
             'nama_prodi' => 'required',
         ]);
 
-        try {
-            $mahasiswa = new MahasiswaController();
+            $mahasiswa = new mahasiswa();
             $mahasiswa->id_batch = $request->id_batch;
             $mahasiswa->nim_mhs = $request->nim_mhs;
             $mahasiswa->nama_mhs = $request->nama_mhs;
@@ -59,17 +58,13 @@ class MahasiswaController extends Controller
             $mahasiswa->jml_cuti = $request->jml_cuti;
             $mahasiswa->kode_prodi = $request->kode_prodi;
             $mahasiswa->nama_prodi = $request->nama_prodi;
-            $mahasiswa->save();
-
-            $request->session()->flash('message', 'Data Berhasil Disimpan!');
-
+            if ($mahasiswa->save()) {
+                return redirect()->route('mahasiswa.index')->with('message', 'Data Mahasiswa Berhasil Dibuat.');
+            } else {
+                return redirect()->back()->with('error', 'Gagal Menambah Data Mahasiswa.');
+            }
             return redirect()->route('mahasiswa.index');
-        } catch (\Exception $e) {
-            $request->session()->flash('error', 'Gagal Menambahkan data.');
-
-            return redirect()->back();
         }
-    }
 
     /**
      * Display the specified resource.

@@ -25,7 +25,8 @@
             @endif
 
             <div class="section-body">
-
+            <form action="{{ route('batch.store') }}" method="POST">
+                    @csrf
                     <div class="form-group">
                         <label for="id_batch">Id Batch</label>
                         <input type="number" name="id_batch" id="id_batch" class="form-control">
