@@ -52,7 +52,7 @@ https://templatemo.com/tm-543-breezed
                     <nav class="main-nav">
                         <!-- ***** Logo Start ***** -->
                         <a href="index.html" class="logo">
-                            SISPEK Yudisium
+                            
                         </a>
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
