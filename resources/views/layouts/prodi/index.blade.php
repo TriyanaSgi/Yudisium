@@ -58,8 +58,8 @@
                                     <td>{{ $item->nama_pt }}</td>
                                     
                                     <td>
-                                        <a href="{{ route('prodi.edit', $item->id_akreditasi) }}" class="btn btn-primary">Edit</a>
-                                        <form action="{{ route('prodi.delete', $item->id_akreditasi) }}" method="POST" style="display: inline-block;">
+                                        <a href="{{ route('prodi.edit', $item->kode_prodi) }}" class="btn btn-primary">Edit</a>
+                                        <form action="{{ route('prodi.delete', $item->kode_prodi) }}" method="POST" style="display: inline-block;">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-danger">Delete</button>

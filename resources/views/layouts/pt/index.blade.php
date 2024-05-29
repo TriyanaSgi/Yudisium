@@ -50,12 +50,12 @@
                         <tbody>
                             @foreach ($data_pt as $item)
                                 <tr>
-                                    <td>{{ $item->kd_pt }}</td>
+                                    <td>{{ $item->kode_pt }}</td>
                                     <td>{{ $item->nama_pt }}</td>
 
                                     <td>
-                                        <a href="{{ route('pt.edit', $item->kd_pt) }}" class="btn btn-primary">Edit</a>
-                                        <form action="{{ route('pt.delete', $item->kd_pt) }}" method="POST" style="display: inline-block;">
+                                        <a href="{{ route('pt.edit', $item->kode_pt) }}" class="btn btn-primary">Edit</a>
+                                        <form action="{{ route('pt.delete', $item->kode_pt) }}" method="POST" style="display: inline-block;">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-danger">Delete</button>

@@ -12,13 +12,13 @@
         <div class="section-header">
             <h1>Edit Data PT</h1>
         </div>
-        <form action="{{ route('pt.update', $pt->kd_pt) }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('pt.update', $pt->kode_pt) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
 
                 <div class="form-group">
-                    <label for="kd_pt">Kode PT</label>
-                    <input type="number" name="kd_pt" id="kd_pt" class="form-control" value="{{ $pt->kd_pt }}" maxlength="255">
+                    <label for="kode_pt">Kode PT</label>
+                    <input type="number" name="kode_pt" id="kode_pt" class="form-control" value="{{ $pt->kode_pt }}" maxlength="255">
                 </div>
 
                 <div class="form-group">

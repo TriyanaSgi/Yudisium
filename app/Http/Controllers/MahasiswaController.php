@@ -41,9 +41,9 @@ class MahasiswaController extends Controller
             'tempat_lahir' => 'required',
             'tgl_lahir' => 'required',
             'ipk' => 'required',
-            'jml_smtr_aktif' => 'required',
+            'jml_smstr_aktif' => 'required',
             'jml_cuti' => 'required',
-            'kd_prodi' => 'required',
+            'kode_prodi' => 'required',
             'nama_prodi' => 'required',
         ]);
 
@@ -55,9 +55,9 @@ class MahasiswaController extends Controller
             $mahasiswa->tempat_lahir = $request->tempat_lahir;
             $mahasiswa->tgl_lahir = $request->tgl_lahir;
             $mahasiswa->ipk = $request->ipk;
-            $mahasiswa->jml_smtr_aktif = $request->jml_smtr_aktif;
+            $mahasiswa->jml_smstr_aktif = $request->jml_smstr_aktif;
             $mahasiswa->jml_cuti = $request->jml_cuti;
-            $mahasiswa->kd_prodi = $request->kd_prodi;
+            $mahasiswa->kode_prodi = $request->kode_prodi;
             $mahasiswa->nama_prodi = $request->nama_prodi;
             $mahasiswa->save();
 
@@ -108,9 +108,9 @@ class MahasiswaController extends Controller
                 'tempat_lahir' => 'required',
                 'tgl_lahir' => 'required',
                 'ipk' => 'required',
-                'jml_smtr_aktif' => 'required',
+                'jml_smstr_aktif' => 'required',
                 'jml_cuti' => 'required',
-                'kd_prodi' => 'required',
+                'kode_prodi' => 'required',
                 'nama_prodi' => 'required',
             ]);
             $mahasiswa->id_batch = $request->id_batch;
@@ -119,9 +119,9 @@ class MahasiswaController extends Controller
             $mahasiswa->tempat_lahir = $request->tempat_lahir;
             $mahasiswa->tgl_lahir = $request->tgl_lahir;
             $mahasiswa->ipk = $request->ipk;
-            $mahasiswa->jml_smtr_aktif = $request->jml_smtr_aktif;
+            $mahasiswa->jml_smstr_aktif = $request->jml_smstr_aktif;
             $mahasiswa->jml_cuti = $request->jml_cuti;
-            $mahasiswa->kd_prodi = $request->kd_prodi;
+            $mahasiswa->kode_prodi = $request->kode_prodi;
             $mahasiswa->nama_prodi = $request->nama_prodi;
             $mahasiswa->save();
     

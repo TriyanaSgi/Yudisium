@@ -10,10 +10,10 @@ class pt extends Model
     use HasFactory;
 
     protected $table = 'data_pt';
-    protected $primaryKey = 'kd_pt';
+    protected $primaryKey = 'kode_pt';
 
     protected $fillable = [
-        'kd_pt',
+        'kode_pt',
         'nama_pt',
     ];
 }
