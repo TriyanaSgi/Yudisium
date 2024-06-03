@@ -32,7 +32,7 @@
                     </div>
                     <div class="form-group">
                         <label for="tahun_angkatan">Tahun Angkatan</label>
-                        <input type="text" name="tahun_angkatan" class="form-control" required>
+                        <input type="number" name="tahun_angkatan" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label for="program_studi">Program Studi</label>
@@ -40,7 +40,10 @@
                     </div>
                     <div class="form-group">
                         <label for="status">Status</label>
-                        <input type="text" name="status" class="form-control" required>
+                        <select name="status" id="status" class="form-control">
+                            <option value="Aktif">Aktif</option>
+                            <option value="Tidak Aktif">Tidak Aktif</option>
+                        </select>
                     </div>
                     <div class="form-group">
                         <label for="sks">SKS</label>
