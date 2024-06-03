@@ -169,10 +169,11 @@ a.main-stroked-button:hover {
 a.main-filled-button {
   font-size: 13px;
   border-radius: 25px;
-  padding: 13px 25px;
-  background-color: #fff;
+  padding: 11px 25px;
+  background-color: transparent;
+  border: 2px solid #fff;
   text-transform: uppercase;
-  color: #34395e;
+  color: #fff;
   font-weight: 600;
   letter-spacing: 1px;
   -webkit-transition: all 0.3s ease 0s;
@@ -182,8 +183,8 @@ a.main-filled-button {
 }
 
 a.main-filled-button:hover {
-  color: #fff;
-  background-color: #6777ef;
+  background-color: #fff;
+  color: #34395e;
 }
 
 a.main-button-icon {
