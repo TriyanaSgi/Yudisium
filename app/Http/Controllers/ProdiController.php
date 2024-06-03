@@ -41,23 +41,18 @@ class ProdiController extends Controller
             'nama_pt' => 'required',
         ]);
 
-        try {
-            $data_prodi = new ProdiController();
+            $data_prodi = new prodi();
             $data_prodi->nama_prodi = $request->nama_prodi;
             $data_prodi->kode_prodi = $request->kode_prodi;
             $data_prodi->kode_pt = $request->kode_pt;
             $data_prodi->nama_pt = $request->nama_pt;
-            $data_prodi->save();
-
-            $request->session()->flash('message', 'Data Berhasil Disimpan!');
-
+            if ($data_prodi->save()) {
+                return redirect()->route('prodi.index')->with('message', 'Data Prodi Berhasil Dibuat.');
+            } else {
+                return redirect()->back()->with('error', 'Gagal Menambah Data Prodi.');
+            }
             return redirect()->route('prodi.index');
-        } catch (\Exception $e) {
-            $request->session()->flash('error', 'Gagal Menambahkan data.');
-
-            return redirect()->back();
         }
-    }
 
     /**
      * Display the specified resource.

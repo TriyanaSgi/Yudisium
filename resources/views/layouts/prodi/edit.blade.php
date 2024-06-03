@@ -12,53 +12,33 @@
             <div class="section-header">
                 <h1>Data Prodi</h1>
             </div>
+            <form action="{{ route('prodi.update', $data_prodi->kode_prodi) }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                @method('PUT')
 
+                <div class="form-group">
+                    <label for="nama_prodi">Nama Prodi</label>
+                    <input type="text" name="nama_prodi" id="nama_prodi" class="form-control" value="{{ $data_prodi->nama_prodi }}" maxlength="255">
+                </div>
 
-            @if (session('message'))
-                <div class="alert alert-success">
-                    {{ session('message') }}
+                <div class="form-group">
+                    <label for="kode_prodi">Kode Prodi</label>
+                    <input type="number" name="kode_pt" id="kode_pt" class="form-control" value="{{ $data_prodi->kode_prodi }}" maxlength="255">
                 </div>
-            @endif
-            @if (session('error'))
-                <div class="alert alert-danger">
-                    {{ session('error') }}
+
+                <div class="form-group">
+                    <label for="kode_pt">Kode PT</label>
+                    <input type="number" name="kode_pt" id="kode_pt" class="form-control" value="{{ $data_prodi->kode_pt }}" maxlength="255">
                 </div>
-            @endif
-            
-            <div class="section-body">
-            <div class="table-responsive">
-                    <div class="row mb-3">
-                        <div class="col-md-6">
-                            <a href="{{ url('datamhs/prodi_cr') }}" class="btn btn-primary mb-3">Tambah Data</a>
-                            <form action="" method="GET">
-                                <div class="input-group">
-                                    <input type="text" name="search" class="form-control" placeholder="Cari Berdasarkan Nama Prodi...">
-                                    <div class="input-group-append">
-                                        <button class="btn btn-primary" style="margin-left:5px;" type="submit">Search</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th>Kode Prodi</th>
-                                <th>Nama Prodi</th>
-                                <th>Kode Perguruan Tinggi</th>
-                                <th>Nama Perguruan Tinggi</th>
-                               
-                            </tr>
-                        </thead>
-                        </tbody>
-                    </table>
-            </div>
-        </section>
-    </div>
+
+                <div class="form-group">
+                    <label for="nama_pt">Nama PT</label>
+                    <input type="text" name="nama_pt" id="nama_pt" class="form-control" value="{{ $data_prodi->nama_pt }}" maxlength="255">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Update</button>
+            </form>
+        </div>
+    </section>
+</div>
 @endsection
-
-@push('scripts')
-    <!-- JS Libraies -->
-
-    <!-- Page Specific JS File -->
-@endpush

@@ -12,60 +12,63 @@
             <div class="section-header">
                 <h1>Data Mahasiswa</h1>
             </div>
+            <form action="{{ route('mahasiswa.update', $mahasiswa->id_batch) }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                @method('PUT')
 
-
-            @if (session('message'))
-                <div class="alert alert-success">
-                    {{ session('message') }}
+                <div class="form-group">
+                    <label for="id_batch">ID Batch</label>
+                    <input type="text" name="id_batch" id="id_batch" class="form-control" value="{{ $mahasiswa->id_batch }}" maxlength="255">
                 </div>
-            @endif
-            @if (session('error'))
-                <div class="alert alert-danger">
-                    {{ session('error') }}
+
+                <div class="form-group">
+                    <label for="nim_mhs">NIM Mahasiswa</label>
+                    <input type="number" name="nim_mhs" id="nim_mhs" class="form-control" value="{{ $mahasiswa->nim_mhs }}" maxlength="255">
                 </div>
-            @endif
 
-            <div class="section-body">
-            <div class="table-responsive">
-                    <div class="row mb-3">
-                        <div class="col-md-6">
-                            <a href="{{ url('datamhs/data_mhs_cr') }}" class="btn btn-primary mb-3">Tambah Data</a>
-                            <form action="" method="GET">
-                                <div class="input-group">
-                                    <input type="text" name="search" class="form-control" placeholder="Cari Berdasarkan Nama Prodi...">
-                                    <div class="input-group-append">
-                                        <button class="btn btn-primary" style="margin-left:5px;" type="submit">Search</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th>ID Batch</th>
-                                <th>Nim Mahasiswa</th>
-                                <th>Nama Mahasiswa</th>
-                                <th>Tempat Lahir</th>
-                                <th>Tanggal Lahir</th>
-                                <th>Ipk</th>
-                                <th>Tahun Masuk</th>
-                                <th>Jurusan</th>
-                                <th>Kode Prodi</th>
-                                <th>Nama Prodi</th>
-                                <th>Asal Perguruan Tinggi</th>
+                <div class="form-group">
+                    <label for="nama_mhs">Nama Mahasiswa</label>
+                    <input type="number" name="nama_mhs" id="nama_mhs" class="form-control" value="{{ $mahasiswa->nama_mhs }}" maxlength="255">
+                </div>
 
-                            </tr>
-                        </thead>
-                        </tbody>
-                    </table>
-            </div>
-        </section>
-    </div>
+                <div class="form-group">
+                    <label for="tempat_lahir">Tempat Lahir</label>
+                    <input type="text" name="tempat_lahir" id="tempat_lahir" class="form-control" value="{{ $mahasiswa->tempat_lahir }}" maxlength="255">
+                </div>
+
+                <div class="form-group">
+                    <label for="tgl_lahir">Tanggal Lahir</label>
+                    <input type="text" name="tgl_lahir" id="tgl_lahir" class="form-control" value="{{ $mahasiswa->tgl_lahir }}" maxlength="255">
+                </div>
+
+                <div class="form-group">
+                    <label for="ipk">IPK</label>
+                    <input type="number" name="ipk" id="ipk" class="form-control" value="{{ $mahasiswa->ipk }}" maxlength="255">
+                </div>
+
+                <div class="form-group">
+                    <label for="jml_smstr_aktif">Jumlah Semester Aktif</label>
+                    <input type="number" name="jml_smstr_aktif" id="jml_smstr_aktif" class="form-control" value="{{ $mahasiswa->jml_smstr_aktif }}" maxlength="255">
+                </div>
+
+                <div class="form-group">
+                    <label for="jml_cuti">Jumlah Cuti</label>
+                    <input type="text" name="jml_cuti" id="jml_cuti" class="form-control" value="{{ $mahasiswa->jml_cuti }}" maxlength="255">
+                </div>
+
+                <div class="form-group">
+                    <label for="kode_prodi">Kode Prodi</label>
+                    <input type="number" name="kode_prodi" id="kode_prodi" class="form-control" value="{{ $mahasiswa->kode_prodi }}" maxlength="255">
+                </div>
+
+                <div class="form-group">
+                    <label for="nama_prodi">Nama Prodi</label>
+                    <input type="text" name="nama_prodi" id="nama_prodi" class="form-control" value="{{ $mahasiswa->nama_prodi }}" maxlength="255">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Update</button>
+            </form>
+        </div>
+    </section>
+</div>
 @endsection
-
-@push('scripts')
-    <!-- JS Libraies -->
-
-    <!-- Page Specific JS File -->
-@endpush

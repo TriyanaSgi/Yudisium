@@ -64,9 +64,9 @@
                                     <td>{{ $item->tempat_lahir}}</td>
                                     <td>{{ $item->tgl_lahir}}</td>
                                     <td>{{ $item->ipk }}</td>
-                                    <td>{{ $item->jml_smtr_aktif }}</td>
+                                    <td>{{ $item->jml_smstr_aktif }}</td>
                                     <td>{{ $item->jml_cuti }}</td>
-                                    <td>{{ $item->kd_prodi }}</td>
+                                    <td>{{ $item->kode_prodi }}</td>
                                     <td>{{ $item->nama_prodi }}</td>
                                     
 

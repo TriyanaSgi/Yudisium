@@ -41,35 +41,30 @@ class MahasiswaController extends Controller
             'tempat_lahir' => 'required',
             'tgl_lahir' => 'required',
             'ipk' => 'required',
-            'jml_smtr_aktif' => 'required',
+            'jml_smstr_aktif' => 'required',
             'jml_cuti' => 'required',
-            'kd_prodi' => 'required',
+            'kode_prodi' => 'required',
             'nama_prodi' => 'required',
         ]);
 
-        try {
-            $mahasiswa = new MahasiswaController();
+            $mahasiswa = new mahasiswa();
             $mahasiswa->id_batch = $request->id_batch;
             $mahasiswa->nim_mhs = $request->nim_mhs;
             $mahasiswa->nama_mhs = $request->nama_mhs;
             $mahasiswa->tempat_lahir = $request->tempat_lahir;
             $mahasiswa->tgl_lahir = $request->tgl_lahir;
             $mahasiswa->ipk = $request->ipk;
-            $mahasiswa->jml_smtr_aktif = $request->jml_smtr_aktif;
+            $mahasiswa->jml_smstr_aktif = $request->jml_smstr_aktif;
             $mahasiswa->jml_cuti = $request->jml_cuti;
-            $mahasiswa->kd_prodi = $request->kd_prodi;
+            $mahasiswa->kode_prodi = $request->kode_prodi;
             $mahasiswa->nama_prodi = $request->nama_prodi;
-            $mahasiswa->save();
-
-            $request->session()->flash('message', 'Data Berhasil Disimpan!');
-
+            if ($mahasiswa->save()) {
+                return redirect()->route('mahasiswa.index')->with('message', 'Data Mahasiswa Berhasil Dibuat.');
+            } else {
+                return redirect()->back()->with('error', 'Gagal Menambah Data Mahasiswa.');
+            }
             return redirect()->route('mahasiswa.index');
-        } catch (\Exception $e) {
-            $request->session()->flash('error', 'Gagal Menambahkan data.');
-
-            return redirect()->back();
         }
-    }
 
     /**
      * Display the specified resource.
@@ -108,9 +103,9 @@ class MahasiswaController extends Controller
                 'tempat_lahir' => 'required',
                 'tgl_lahir' => 'required',
                 'ipk' => 'required',
-                'jml_smtr_aktif' => 'required',
+                'jml_smstr_aktif' => 'required',
                 'jml_cuti' => 'required',
-                'kd_prodi' => 'required',
+                'kode_prodi' => 'required',
                 'nama_prodi' => 'required',
             ]);
             $mahasiswa->id_batch = $request->id_batch;
@@ -119,9 +114,9 @@ class MahasiswaController extends Controller
             $mahasiswa->tempat_lahir = $request->tempat_lahir;
             $mahasiswa->tgl_lahir = $request->tgl_lahir;
             $mahasiswa->ipk = $request->ipk;
-            $mahasiswa->jml_smtr_aktif = $request->jml_smtr_aktif;
+            $mahasiswa->jml_smstr_aktif = $request->jml_smstr_aktif;
             $mahasiswa->jml_cuti = $request->jml_cuti;
-            $mahasiswa->kd_prodi = $request->kd_prodi;
+            $mahasiswa->kode_prodi = $request->kode_prodi;
             $mahasiswa->nama_prodi = $request->nama_prodi;
             $mahasiswa->save();
     

@@ -14,7 +14,7 @@ class PtController extends Controller
     {
         $search = $request->get('search');
         if ($search) {
-            $data['data_pt'] = pt::where('kd_pt', 'like', "%{$search}%")->get();
+            $data['data_pt'] = pt::where('kode_pt', 'like', "%{$search}%")->get();
         } else {
             $data['data_pt'] = pt::all();
         }
@@ -35,25 +35,22 @@ class PtController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'kd_pt' => 'required',
+            'kode_pt' => 'required',
             'nama_pt' => 'required',
         ]);
 
-        try {
-            $data_pt = new PtController();
-            $data_pt->kd_pt = $request->kd_pt;
+        
+            $data_pt = new pt();
+            $data_pt->kode_pt = $request->kode_pt;
             $data_pt->nama_pt = $request->nama_pt;
-            $data_pt->save();
-
-            $request->session()->flash('message', 'Data Berhasil Disimpan!');
-
+            if ($data_pt->save()) {
+                return redirect()->route('pt.index')->with('message', 'Data SDM Berhasil Dibuat.');
+            } else {
+                return redirect()->back()->with('error', 'Gagal Menambah Data SDM.');
+            }
             return redirect()->route('pt.index');
-        } catch (\Exception $e) {
-            $request->session()->flash('error', 'Gagal Menambahkan data.');
-
-            return redirect()->back();
         }
-    }
+    
 
     /**
      * Display the specified resource.
@@ -86,10 +83,10 @@ class PtController extends Controller
     
         try {
             $validatedData = $request->validate([
-                'kd_pt' => 'required',
+                'kode_pt' => 'required',
                 'nama_pt' => 'required',
             ]);
-            $data_pt->kd_pt = $request->kd_pt;
+            $data_pt->kode_pt = $request->kode_pt;
             $data_pt->nama_pt = $request->nama_pt;
             $data_pt->save();
     

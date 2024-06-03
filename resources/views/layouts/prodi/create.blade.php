@@ -25,30 +25,28 @@
             @endif
 
             <div class="section-body">
-
+            <form action="{{ route('prodi.store') }}" method="POST">
+                    @csrf
                     <div class="form-group">
                         <label for="nama_prodi">Nama prodi</label>
                         <input type="text" name="nama_prodi" id="nama_prodi" class="form-control">
                     </div>
 
                     <div class="form-group">
-                        <label for="wilayah">Kode Prodi</label>
-                        <input type="number" name="wilayah" id="wilayah" class="form-control">
+                        <label for="kode_prodi">Kode Prodi</label>
+                        <input type="number" name="kode_prodi" id="kode_prodi" class="form-control">
                     </div>
 
                     <div class="form-group">
-                        <label for="nama_kaprodi">Email</label>
-                        <input type="text" name="nama_kaprodi" id="nama_kaprodi" class="form-control">
+                        <label for="kode_pt">Kode PT</label>
+                        <input type="text" name="kode_pt" id="kode_pt" class="form-control">
                     </div>
 
                     <div class="form-group">
-                        <label for="tgl_sk_prodi">Nama Perguruan Tinggi</label>
-                        <input type="text" name="tgl_sk_prodi" id="tgl_sk_prodi" class="form-control">
+                        <label for="nama_pt">Nama PT</label>
+                        <input type="text" name="nama_pt" id="nama_pt" class="form-control">
                     </div>
-                    <div class="form-group">
-                        <label for="tgl_penetapan_akreditasi">Kode Perguruan Tinggi</label>
-                        <input type="number" name="tgl_penetapan_akreditasi" id="tgl_penetapan_akreditasi" class="form-control">
-                    </div>
+            
 
 
                     <button type="submit" class="btn btn-primary">Submit</button>
