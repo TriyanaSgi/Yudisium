@@ -59,7 +59,7 @@
                                     <td>{{ $item->id_batch }}</td>
                                     <td>{{ $item->nama_mhs }}</td>
                                     <td>{{ $item->tahun_angkatan}}</td>
-                                    <td>{{ $item->pogram_studi }}</td>
+                                    <td>{{ $item->program_studi }}</td>
                                     <td>{{ $item->status }}</td>
                                     <td>{{ $item->sks }}</td>
                                     <td>{{ $item->ipk }}</td>
