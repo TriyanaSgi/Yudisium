@@ -1,26 +1,21 @@
 @extends('layouts.app')
 
-@section('title', 'Batch Yudisium')
-
-@push('style')
-    <!-- CSS Libraries -->
-@endpush
+@section('title', 'Tambah Batch')
 
 @section('content')
     <div class="main-content">
         <section class="section">
             <div class="section-header">
-                <h1>Batch Yudisium</h1>
+                <h1>Tambah Batch</h1>
             </div>
 
-            @if (session('message'))
-                <div class="alert alert-success">
-                    {{ session('message') }}
-                </div>
-            @endif
-            @if (session('error'))
+            @if ($errors->any())
                 <div class="alert alert-danger">
-                    {{ session('error') }}
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
                 </div>
             @endif
 
@@ -28,57 +23,40 @@
                 <form action="{{ route('batch.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
-                        <label for="id_batch">Id Batch</label>
-                        <input type="number" name="id_batch" id="id_batch" class="form-control">
+                        <label for="id_batch">ID Batch</label>
+                        <input type="text" name="id_batch" class="form-control" required>
                     </div>
-
                     <div class="form-group">
                         <label for="nama_mhs">Nama Mahasiswa</label>
-                        <input type="text" name="nama_mhs" id="nama_mhs" class="form-control">
+                        <input type="text" name="nama_mhs" class="form-control" required>
                     </div>
-
                     <div class="form-group">
                         <label for="tahun_angkatan">Tahun Angkatan</label>
-                        <input type="number" name="tahun_angkatan" id="tahun_angkatan" class="form-control">
+                        <input type="text" name="tahun_angkatan" class="form-control" required>
                     </div>
-
                     <div class="form-group">
                         <label for="program_studi">Program Studi</label>
-                        <input type="text" name="program_studi" id="program_studi" class="form-control">
+                        <input type="text" name="program_studi" class="form-control" required>
                     </div>
-
                     <div class="form-group">
                         <label for="status">Status</label>
-                        <select name="status" id="status" class="form-control">
-                            <option value="Aktif">Aktif</option>
-                            <option value="Tidak Aktif">Tidak Aktif</option>
-                        </select>
+                        <input type="text" name="status" class="form-control" required>
                     </div>
-
                     <div class="form-group">
                         <label for="sks">SKS</label>
-                        <input type="number" name="sks" id="sks" class="form-control">
+                        <input type="text" name="sks" class="form-control" required>
                     </div>
-
                     <div class="form-group">
-                        <label for="ipk">Indeks Prestasi Kumulatif</label>
-                        <input type="number" name="ipk" id="ipk" class="form-control">
+                        <label for="ipk">IPK</label>
+                        <input type="text" name="ipk" class="form-control" required>
                     </div>
-
                     <div class="form-group">
-                        <label for="file">Upload File</label>
-                        <input type="file" name="file" id="file" class="form-control">
+                        <label for="upload">Upload File</label>
+                        <input type="file" name="upload" class="form-control" required>
                     </div>
-
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
             </div>
         </section>
     </div>
 @endsection
-
-@push('scripts')
-    <!-- JS Libraries -->
-
-    <!-- Page Specific JS File -->
-@endpush

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'batch yudisium')
+@section('title', 'Batch Yudisium')
 
 @push('style')
     <!-- CSS Libraries -->
@@ -63,8 +63,13 @@
                                     <td>{{ $item->status }}</td>
                                     <td>{{ $item->sks }}</td>
                                     <td>{{ $item->ipk }}</td>
-                                    <td>{{ $item->upload }}</td>
-
+                                    <td>
+                                        @if($item->upload)
+                                            <a href="{{ url($item->upload) }}" target="_blank">Lihat File</a>
+                                        @else
+                                            Tidak ada file
+                                        @endif
+                                    </td>
                                     <td>
                                         <a href="{{ route('batch.edit', $item->id_batch) }}" class="btn btn-primary">Edit</a>
                                         <form action="{{ route('batch.delete', $item->id_batch) }}" method="POST" style="display: inline-block;">
