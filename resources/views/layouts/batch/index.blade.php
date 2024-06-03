@@ -49,6 +49,7 @@
                                 <th>Status</th>
                                 <th>Sks</th>
                                 <th>Ipk</th>
+                                <th>Upload File</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -62,6 +63,7 @@
                                     <td>{{ $item->status }}</td>
                                     <td>{{ $item->sks }}</td>
                                     <td>{{ $item->ipk }}</td>
+                                    <td>{{ $item->upload }}</td>
 
                                     <td>
                                         <a href="{{ route('batch.edit', $item->id_batch) }}" class="btn btn-primary">Edit</a>

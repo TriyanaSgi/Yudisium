@@ -21,7 +21,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/batch', [App\Http\Controllers\BatchController::class, 'index'])->name('batch.index');
     Route::get('/batch/create', [App\Http\Controllers\BatchController::class, 'create'])->name('batch.create');
     Route::post('/batch/store', [App\Http\Controllers\BatchController::class, 'store'])->name('batch.store');
-    Route::get('/batch/edit/{id}', [App\Http\Controllers\BatchController::class, 'edit'])->name('batch.edit');
+    Route::put('/batch/edit/{id}', [App\Http\Controllers\BatchController::class, 'edit'])->name('batch.edit');
     Route::put('/batch/update/{id}', [App\Http\Controllers\BatchController::class, 'update'])->name('batch.update');
     Route::delete('/batch/delete/{id}', [App\Http\Controllers\BatchController::class, 'destroy'])->name('batch.delete');
 

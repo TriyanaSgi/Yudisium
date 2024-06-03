@@ -12,9 +12,11 @@
         <div class="section-header">
             <h1>Edit Data Batch Yudisium</h1>
         </div>
-        <form action="{{ route('batch.update', $batch->id_batch) }}" method="POST" enctype="multipart/form-data">
-                @csrf
-                @method('PUT')
+        <div class="section-body">
+                <form action="{{ route('batch.edit', $batch->id_batch) }}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    @method('PUT') <!-- Using method spoofing for PUT request -->
+                    
 
                 <div class="form-group">
                     <label for="id_batch">Id Batch</label>
@@ -37,9 +39,12 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="status">Status</label>
-                    <input type="text" name="status" id="status" class="form-control" value="{{ $batch->status }}">
-                </div>
+                        <label for="status">Status</label>
+                        <select name="status" id="status" class="form-control">
+                            <option value="Aktif">Aktif</option>
+                            <option value="Tidak Aktif">Tidak Aktif</option>
+                        </select>
+                    </div>
 
                 <div class="form-group">
                     <label for="sks">Jumlah Sks</label>
@@ -51,7 +56,12 @@
                     <input type="number" name="ipk" id="ipk" class="form-control" value="{{ $batch->ipk }}" min="0" max="11">
                 </div>
 
-                <button type="submit" class="btn btn-primary">Update</button>
+                <div class="form-group">
+                        <label for="file">Upload File</label>
+                        <input type="file" name="file" id="file" class="form-control">
+                    </div>
+
+                <button type="submit" class="btn btn-primary">Edit</button>
             </form>
         </div>
     </section>

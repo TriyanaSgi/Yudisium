@@ -42,6 +42,7 @@ class BatchController extends Controller
             'status' => 'required',
             'sks' => 'required',
             'ipk' => 'required',
+            'upload' => 'required',
         ]);
 
 
@@ -53,6 +54,7 @@ class BatchController extends Controller
             $batch->status = $request->status;
             $batch->sks = $request->sks;
             $batch->ipk = $request->ipk;
+            $batch->upload = $request->upload;
             if ($batch->save()) {
                 return redirect()->route('batch.index')->with('message', 'Data Batch Berhasil Dibuat.');
             } else {
@@ -99,6 +101,7 @@ class BatchController extends Controller
                 'status' => 'required',
                 'sks' => 'required',
                 'ipk' => 'required',
+                'upload_file' => 'required',
             ]);
             $batch->id_batch = $request->id_batch;
             $batch->nama_mhs = $request->nama_mhs;
@@ -107,6 +110,7 @@ class BatchController extends Controller
             $batch->status = $request->status;
             $batch->sks = $request->sks;
             $batch->ipk = $request->ipk;
+            $batch->upload_file = $request->upload_file;
             $batch->save();
     
             return redirect()->route('batch.index')->with('message', 'Edit Batch Berhasil');

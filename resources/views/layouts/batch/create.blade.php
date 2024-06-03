@@ -25,7 +25,7 @@
             @endif
 
             <div class="section-body">
-            <form action="{{ route('batch.store') }}" method="POST">
+                <form action="{{ route('batch.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
                         <label for="id_batch">Id Batch</label>
@@ -46,9 +46,13 @@
                         <label for="program_studi">Program Studi</label>
                         <input type="text" name="program_studi" id="program_studi" class="form-control">
                     </div>
+
                     <div class="form-group">
                         <label for="status">Status</label>
-                        <input type="text" name="status" id="status" class="form-control">
+                        <select name="status" id="status" class="form-control">
+                            <option value="Aktif">Aktif</option>
+                            <option value="Tidak Aktif">Tidak Aktif</option>
+                        </select>
                     </div>
 
                     <div class="form-group">
@@ -59,6 +63,11 @@
                     <div class="form-group">
                         <label for="ipk">Indeks Prestasi Kumulatif</label>
                         <input type="number" name="ipk" id="ipk" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="file">Upload File</label>
+                        <input type="file" name="file" id="file" class="form-control">
                     </div>
 
                     <button type="submit" class="btn btn-primary">Submit</button>
