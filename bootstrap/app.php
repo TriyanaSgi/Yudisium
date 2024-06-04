@@ -12,7 +12,17 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware) {
         //
+        $middleware->alias([
+
+            'superadmin' => \App\Http\Middleware\superadmin::class,
+            'batch' => \App\Http\Middleware\batch::class,
+            'mahasiswa' => \App\Http\Middleware\mahasiswa::class,
+            'pt' => \App\Http\Middleware\pt::class,
+            'prodi' => \App\Http\Middleware\prodi::class,
+
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //
+        
     })->create();
