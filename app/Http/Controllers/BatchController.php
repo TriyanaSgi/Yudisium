@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\batch;
+use App\Models\Batch;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class BatchController extends Controller
 {
@@ -14,9 +15,9 @@ class BatchController extends Controller
     {
         $search = $request->get('search');
         if ($search) {
-            $data['batch'] = batch::where('id_batch', 'like', "%{$search}%")->get();
+            $data['batch'] = Batch::where('id_batch', 'like', "%{$search}%")->get();
         } else {
-            $data['batch'] = batch::all();
+            $data['batch'] = Batch::all();
         }
         return view('layouts.batch.index', $data);
     }
@@ -42,43 +43,39 @@ class BatchController extends Controller
             'status' => 'required',
             'sks' => 'required',
             'ipk' => 'required',
-            'upload' => 'required',
+            'upload' => 'required|file',
         ]);
-
-
-            $batch = new batch();
-            $batch->id_batch = $request->id_batch;
-            $batch->nama_mhs = $request->nama_mhs;
-            $batch->tahun_angkatan = $request->tahun_angkatan;
-            $batch->program_studi = $request->program_studi;
-            $batch->status = $request->status;
-            $batch->sks = $request->sks;
-            $batch->ipk = $request->ipk;
-            $batch->upload = $request->upload;
-            if ($batch->save()) {
-                return redirect()->route('batch.index')->with('message', 'Data Batch Berhasil Dibuat.');
-            } else {
-                return redirect()->back()->with('error', 'Gagal Menambah Data Batch.');
-            }
-            return redirect()->route('batch.index');
+    
+        if ($request->hasFile('upload')) {
+            $file = $request->file('upload');
+            $filename = time() . '_' . $file->getClientOriginalName();
+            $path = $file->move(public_path('filebatch'), $filename);
+        } else {
+            return redirect()->back()->with('error', 'Gagal mengunggah file.');
         }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(batch $batch)
-    {
-        //
+    
+        $batch = new Batch();
+        $batch->id_batch = $request->id_batch;
+        $batch->nama_mhs = $request->nama_mhs;
+        $batch->tahun_angkatan = $request->tahun_angkatan;
+        $batch->program_studi = $request->program_studi;
+        $batch->status = $request->status;
+        $batch->sks = $request->sks;
+        $batch->ipk = $request->ipk;
+        $batch->upload = 'filebatch/' . $filename;
+    
+        if ($batch->save()) {
+            return redirect()->route('batch.index')->with('message', 'Data Batch Berhasil Dibuat.');
+        } else {
+            return redirect()->back()->with('error', 'Gagal Menambah Data Batch.');
+        }
     }
-
     /**
      * Show the form for editing the specified resource.
      */
     public function edit($id)
     {
-        //
-        $batch = batch::find($id);
-
+        $batch = Batch::find($id);
         return view('layouts.batch.edit', compact('batch'));    
     }
 
@@ -87,36 +84,44 @@ class BatchController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $batch = batch::find($id);
+        $batch = Batch::find($id);
         if (!$batch) {
             return redirect()->back()->with('error', 'Batch tidak ditemukan');
         }
     
-        try {
-            $validatedData = $request->validate([
-                'id_batch' => 'required',
-                'nama_mhs' => 'required',
-                'tahun_angkatan' => 'required',
-                'program_studi' => 'required',
-                'status' => 'required',
-                'sks' => 'required',
-                'ipk' => 'required',
-                'upload_file' => 'required',
-            ]);
-            $batch->id_batch = $request->id_batch;
-            $batch->nama_mhs = $request->nama_mhs;
-            $batch->tahun_angkatan = $request->tahun_angkatan;
-            $batch->program_studi = $request->program_studi;
-            $batch->status = $request->status;
-            $batch->sks = $request->sks;
-            $batch->ipk = $request->ipk;
-            $batch->upload_file = $request->upload_file;
-            $batch->save();
+        $validatedData = $request->validate([
+            'id_batch' => 'required',
+            'nama_mhs' => 'required',
+            'tahun_angkatan' => 'required',
+            'program_studi' => 'required',
+            'status' => 'required',
+            'sks' => 'required',
+            'ipk' => 'required',
+            'upload' => 'file',
+        ]);
     
-            return redirect()->route('batch.index')->with('message', 'Edit Batch Berhasil');
-        } catch (\Exception $e) {
-            return redirect()->back()->with('error', 'Edit Batch Gagal');
+        if ($request->hasFile('upload')) {
+            // Delete old file
+            if ($batch->upload && file_exists(public_path($batch->upload))) {
+                unlink(public_path($batch->upload));
+            }
+            // Store new file
+            $file = $request->file('upload');
+            $filename = time() . '_' . $file->getClientOriginalName();
+            $path = $file->move(public_path('filebatch'), $filename);
+            $batch->upload = 'filebatch/' . $filename;
         }
+    
+        $batch->id_batch = $request->id_batch;
+        $batch->nama_mhs = $request->nama_mhs;
+        $batch->tahun_angkatan = $request->tahun_angkatan;
+        $batch->program_studi = $request->program_studi;
+        $batch->status = $request->status;
+        $batch->sks = $request->sks;
+        $batch->ipk = $request->ipk;
+        $batch->save();
+    
+        return redirect()->route('batch.index')->with('message', 'Edit Batch Berhasil');
     }
 
     /**
@@ -124,18 +129,20 @@ class BatchController extends Controller
      */
     public function destroy($id)
     {
-        $batch = batch::find($id);
+        $batch = Batch::find($id);
         if (!$batch) {
-            return redirect()->back()->with('error', 'PT tidak ditemukan');
+            return redirect()->back()->with('error', 'Batch tidak ditemukan');
         }
-    
+
         try {
+            if ($batch->upload) {
+                Storage::disk('public')->delete($batch->upload);
+            }
             $batch->delete();
+            session()->flash('message', 'Delete Batch berhasil');
+            return redirect()->route('batch.index');
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Delete Batch gagal');
         }
-    
-        session()->flash('message', 'Delete Batch berhasil');
-        return redirect()->route('batch.index');
     }
 }
