@@ -29,6 +29,12 @@ class MahasiswaController extends Controller
         return view('layouts.mahasiswa.create');
     }
 
+
+    public function verifikasi()
+    {
+        return view('layouts.mahasiswa.verifikasi');
+    }
+
     /**
      * Store a newly created resource in storage.
      */
@@ -47,24 +53,24 @@ class MahasiswaController extends Controller
             'nama_prodi' => 'required',
         ]);
 
-            $mahasiswa = new mahasiswa();
-            $mahasiswa->id_batch = $request->id_batch;
-            $mahasiswa->nim_mhs = $request->nim_mhs;
-            $mahasiswa->nama_mhs = $request->nama_mhs;
-            $mahasiswa->tempat_lahir = $request->tempat_lahir;
-            $mahasiswa->tgl_lahir = $request->tgl_lahir;
-            $mahasiswa->ipk = $request->ipk;
-            $mahasiswa->jml_smstr_aktif = $request->jml_smstr_aktif;
-            $mahasiswa->jml_cuti = $request->jml_cuti;
-            $mahasiswa->kode_prodi = $request->kode_prodi;
-            $mahasiswa->nama_prodi = $request->nama_prodi;
-            if ($mahasiswa->save()) {
-                return redirect()->route('mahasiswa.index')->with('message', 'Data Mahasiswa Berhasil Dibuat.');
-            } else {
-                return redirect()->back()->with('error', 'Gagal Menambah Data Mahasiswa.');
-            }
-            return redirect()->route('mahasiswa.index');
+        $mahasiswa = new mahasiswa();
+        $mahasiswa->id_batch = $request->id_batch;
+        $mahasiswa->nim_mhs = $request->nim_mhs;
+        $mahasiswa->nama_mhs = $request->nama_mhs;
+        $mahasiswa->tempat_lahir = $request->tempat_lahir;
+        $mahasiswa->tgl_lahir = $request->tgl_lahir;
+        $mahasiswa->ipk = $request->ipk;
+        $mahasiswa->jml_smstr_aktif = $request->jml_smstr_aktif;
+        $mahasiswa->jml_cuti = $request->jml_cuti;
+        $mahasiswa->kode_prodi = $request->kode_prodi;
+        $mahasiswa->nama_prodi = $request->nama_prodi;
+        if ($mahasiswa->save()) {
+            return redirect()->route('mahasiswa.index')->with('message', 'Data Mahasiswa Berhasil Dibuat.');
+        } else {
+            return redirect()->back()->with('error', 'Gagal Menambah Data Mahasiswa.');
         }
+        return redirect()->route('mahasiswa.index');
+    }
 
     /**
      * Display the specified resource.
@@ -82,7 +88,7 @@ class MahasiswaController extends Controller
         //
         $mahasiswa = mahasiswa::find($id);
 
-        return view('layouts.mahasiswa.edit', compact('mahasiswa'));    
+        return view('layouts.mahasiswa.edit', compact('mahasiswa'));
     }
 
     /**
@@ -94,7 +100,7 @@ class MahasiswaController extends Controller
         if (!$mahasiswa) {
             return redirect()->back()->with('error', 'Batch tidak ditemukan');
         }
-    
+
         try {
             $validatedData = $request->validate([
                 'id_batch' => 'required',
@@ -119,7 +125,7 @@ class MahasiswaController extends Controller
             $mahasiswa->kode_prodi = $request->kode_prodi;
             $mahasiswa->nama_prodi = $request->nama_prodi;
             $mahasiswa->save();
-    
+
             return redirect()->route('mahasiswa.index')->with('message', 'Edit Mahasiswa Berhasil');
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Edit Mahasiswa Gagal');
@@ -135,13 +141,13 @@ class MahasiswaController extends Controller
         if (!$mahasiswa) {
             return redirect()->back()->with('error', 'Mahasiswa tidak ditemukan');
         }
-    
+
         try {
             $mahasiswa->delete();
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Delete Mahasiswa gagal');
         }
-    
+
         session()->flash('message', 'Delete Mahasiswa berhasil');
         return redirect()->route('mahasiswa.index');
     }

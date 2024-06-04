@@ -31,6 +31,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/mahasiswa/edit/{id}', [App\Http\Controllers\MahasiswaController::class, 'edit'])->name('mahasiswa.edit');
     Route::put('/mahasiswa/update/{id}', [App\Http\Controllers\MahasiswaController::class, 'update'])->name('mahasiswa.update');
     Route::delete('/mahasiswa/delete/{id}', [App\Http\Controllers\MahasiswaController::class, 'destroy'])->name('mahasiswa.delete');
+    Route::get('/verifikasi', [App\Http\Controllers\MahasiswaController::class, 'verifikasi'])->name('mahasiswa.verifikasi');
+
 
     Route::get('/prodi', [App\Http\Controllers\ProdiController::class, 'index'])->name('prodi.index');
     Route::get('/prodi/create', [App\Http\Controllers\ProdiController::class, 'create'])->name('prodi.create');
@@ -45,5 +47,4 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/pt/edit/{id}', [App\Http\Controllers\PtController::class, 'edit'])->name('pt.edit');
     Route::put('/pt/update/{id}', [App\Http\Controllers\PtController::class, 'update'])->name('pt.update');
     Route::delete('/pt/delete/{id}', [App\Http\Controllers\PtController::class, 'destroy'])->name('pt.delete');
-
 });

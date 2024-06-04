@@ -44,6 +44,7 @@
             <li class="{{ Request::is('pt') ?  : '' }}">
                 <a class="nav-link" href="{{ url('pt') }}"><i class="fas fa-university"></i> <span> Data Perguruan Tinggi </span></a>
             </li>
+           
 
         </ul>
     </aside>

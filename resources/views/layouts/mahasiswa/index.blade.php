@@ -28,8 +28,13 @@
                 <div class="table-responsive">
                     <div class="row mb-3">
                         <div class="col-md-6">
-                            <a href="{{ route('mahasiswa.create') }}" class="btn btn-primary mb-3">Tambah Data</a>
-                            <form action="{{ route('mahasiswa.index') }}" method="GET">
+                            <div class="d-flex align-items-center mb-3">
+                                <a href="{{ route('mahasiswa.create') }}" class="btn btn-primary me-2">Tambah Data</a>
+                                <form action="{{ route('mahasiswa.index') }}" method="GET" class="d-flex">
+                                    <!-- Tambahkan input lain jika perlu -->
+                                    <a href="{{ route('mahasiswa.verifikasi') }}" class="btn btn-primary me-2">Verifikasi Mahasiswa</a>
+                                </form>
+                            </div>
                                 <div class="input-group">
                                     <input type="text" name="search" class="form-control" placeholder="Cari Berdasarkan ID Mahasiswa...">
                                     <div class="input-group-append">
