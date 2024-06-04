@@ -37,7 +37,6 @@ class HakaksesController extends Controller
         //
         $hakakses = hakakses::find($id);
         return view('layouts.hakakses.edit', compact('hakakses'));
-
     }
 
     /**

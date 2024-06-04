@@ -12,15 +12,20 @@
         <div class="section-header">
             <h1>Edit Data Hak Akses</h1>
         </div>
-        <form action="{{ route('hakakses.update', $hakakses->id) }}" method="POST">
+        <div class="section-body">
+            <form action="{{ route('hakakses.update', $hakakses->id) }}" method="POST">
                 @csrf
                 @method('PUT')
 
                 <div class="form-group">
-                    <label for="name">Hak Akses</label>
-                    <input type="text" name="role" id="role" class="form-control" value="{{ $hakakses->role }}">
+                    <label for="role">Hak Akses</label>
+                    <select name="role" id="role" class="form-control">
+                        <option value="" disabled selected>Pilih Hak Akses</option>
+                        <option value="superadmin" {{ $hakakses->role == 'superadmin' ? 'selected' : '' }}>Superadmin</option>
+                        <option value="mahasiswa" {{ $hakakses->role == 'mahasiswa' ? 'selected' : '' }}>Mahasiswa</option>
+                        <option value="pt" {{ $hakakses->role == 'pt' ? 'selected' : '' }}>PT</option>
+                    </select>
                 </div>
-
 
                 <button type="submit" class="btn btn-primary">Update</button>
             </form>
@@ -28,3 +33,8 @@
     </section>
 </div>
 @endsection
+
+@push('scripts')
+    <!-- JS Libraries -->
+    <!-- Page Specific JS File -->
+@endpush
