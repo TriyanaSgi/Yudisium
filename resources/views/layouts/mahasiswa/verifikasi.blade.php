@@ -13,12 +13,6 @@
             <h1>Verifikasi Data Mahasiswa</h1>
         </div>
 
-        <div class="section-body">
-            <h2 class="section-title">Biodata Mahasiswa</h2>
-            <p class="section-lead">
-                Berikut adalah biodata mahasiswa untuk verifikasi data.
-            </p>
-
             <!-- Search Form -->
             <form action="{{ route('mahasiswa.verifikasi') }}" method="GET">
                 <div class="form-group">
@@ -27,6 +21,12 @@
                 </div>
                 <button type="submit" class="btn btn-primary">Cari</button>
             </form>
+
+            <div class="section-body">
+            <h2 class="section-title">Biodata Mahasiswa</h2>
+            <p class="section-lead">
+                Berikut adalah biodata mahasiswa untuk verifikasi data.
+            </p>
 
             @foreach($mahasiswa as $mhs)
             <div class="row mt-4">
