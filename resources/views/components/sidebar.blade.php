@@ -32,16 +32,16 @@
                 <a class="nav-link" href="{{ url('hakakses/') }}"><i class="fas fa-key"></i> <span>Hak Akses</span></a>
             </li>
             <li class="menu-header">Starter</li>
-            <li class="{{ Request::is('batch') ?  : 'active' }}">
+            <li class="{{ Request::is('batch') ? 'active' : '' }}">
                 <a class="nav-link" href="{{ url('batch') }}"><i class="fas fa-university"></i> <span>Batch Yudisium</span></a>
             </li>
-            <li class="{{ Request::is('mahasiswa') ?  : '' }}">
+            <li class="{{ Request::is('mahasiswa') ? 'active' : '' }}">
                 <a class="nav-link" href="{{ url('mahasiswa') }}"><i class="fas fa-university"></i> <span> Data Mahasiswa </span></a>
             </li>
-            <li class="{{ Request::is('prodi') ?  : '' }}">
+            <li class="{{ Request::is('prodi') ? 'active' : '' }}">
                 <a class="nav-link" href="{{ url('prodi') }}"><i class="fas fa-university"></i> <span> Data Prodi </span></a>
             </li>
-            <li class="{{ Request::is('pt') ?  : '' }}">
+            <li class="{{ Request::is('pt') ? 'active' : '' }}">
                 <a class="nav-link" href="{{ url('pt') }}"><i class="fas fa-university"></i> <span> Data Perguruan Tinggi </span></a>
             </li>
            

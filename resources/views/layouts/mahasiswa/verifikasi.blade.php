@@ -38,7 +38,7 @@
                         <div class="card-body">
                             <p><strong>Nama:</strong> {{ $mhs->nama_mhs }}</p>
                             <p><strong>NIM:</strong> {{ $mhs->nim_mhs }}</p>
-                            <p><strong>Fakultas:</strong> Teknik</p>
+                            <p><strong>Perguruan Tinggi:</strong> {{ $mhs->nama_pt }} </p>
                             <p><strong>Program Studi:</strong> {{ $mhs->nama_prodi }}</p>
                             <p><strong>Semester:</strong> {{ $mhs->jml_smstr_aktif }}</p>
                         </div>
@@ -48,14 +48,12 @@
                 <div class="col-12 col-md-6">
                     <div class="card">
                         <div class="card-header">
-                            <h4>Riwayat Status Kuliah</h4>
+                            <h4>Status Kuliah</h4>
                         </div>
                         <div class="card-body">
                             <ul>
                                 <!-- Example static data -->
-                                <li><strong>2020/2021:</strong> Aktif</li>
-                                <li><strong>2019/2020:</strong> Cuti</li>
-                                <li><strong>2018/2019:</strong> Aktif</li>
+                                <li><strong>Status:</strong> {{ $mhs->batch->status  ?? 'status tidak ditemukan'}} </li>
                                 <!-- You can add dynamic data here if available -->
                             </ul>
                         </div>

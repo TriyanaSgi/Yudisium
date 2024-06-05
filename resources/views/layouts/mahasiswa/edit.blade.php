@@ -66,6 +66,11 @@
                     <input type="text" name="nama_prodi" id="nama_prodi" class="form-control" value="{{ $mahasiswa->nama_prodi }}" maxlength="255">
                 </div>
 
+                <div class="form-group">
+                    <label for="nama_pt">Nama Perguruan Tinggi</label>
+                    <input type="text" name="nama_pt" id="nama_pt" class="form-control" value="{{ $mahasiswa->nama_pt }}" maxlength="255">
+                </div>
+
                 <button type="submit" class="btn btn-primary">Update</button>
             </form>
         </div>

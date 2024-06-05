@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\mahasiswa;
+use App\Models\batch;
 use Illuminate\Http\Request;
 
 class MahasiswaController extends Controller
@@ -33,6 +34,8 @@ class MahasiswaController extends Controller
     public function verifikasi(Request $request)
     {
         $search = $request->get('search');
+
+        $query = mahasiswa::with('batch');
         
         $query = mahasiswa::query();
         
@@ -42,6 +45,7 @@ class MahasiswaController extends Controller
         }
         
         $data['mahasiswa'] = $query->get();
+        $data['batch'] = $query->get();
         
         return view('layouts.mahasiswa.verifikasi', $data);
     }
@@ -63,6 +67,7 @@ class MahasiswaController extends Controller
             'jml_cuti' => 'required',
             'kode_prodi' => 'required',
             'nama_prodi' => 'required',
+            'nama_pt' => 'required',
         ]);
 
         $mahasiswa = new mahasiswa();
@@ -76,6 +81,7 @@ class MahasiswaController extends Controller
         $mahasiswa->jml_cuti = $request->jml_cuti;
         $mahasiswa->kode_prodi = $request->kode_prodi;
         $mahasiswa->nama_prodi = $request->nama_prodi;
+        $mahasiswa->nama_pt = $request->nama_pt;
         if ($mahasiswa->save()) {
             return redirect()->route('mahasiswa.index')->with('message', 'Data Mahasiswa Berhasil Dibuat.');
         } else {
@@ -125,6 +131,7 @@ class MahasiswaController extends Controller
                 'jml_cuti' => 'required',
                 'kode_prodi' => 'required',
                 'nama_prodi' => 'required',
+                'nama_pt' => 'required',
             ]);
             $mahasiswa->id_batch = $request->id_batch;
             $mahasiswa->nim_mhs = $request->nim_mhs;
@@ -136,6 +143,7 @@ class MahasiswaController extends Controller
             $mahasiswa->jml_cuti = $request->jml_cuti;
             $mahasiswa->kode_prodi = $request->kode_prodi;
             $mahasiswa->nama_prodi = $request->nama_prodi;
+            $mahasiswa->nama_pt = $request->nama_pt;
             $mahasiswa->save();
 
             return redirect()->route('mahasiswa.index')->with('message', 'Edit Mahasiswa Berhasil');

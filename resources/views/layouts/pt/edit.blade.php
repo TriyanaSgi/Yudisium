@@ -18,7 +18,7 @@
 
                 <div class="form-group">
                     <label for="kode_pt">Kode PT</label>
-                    <input type="number" name="kode_pt" id="kode_pt" class="form-control" value="{{ $data_pt->kode_pt }}" maxlength="255">
+                    <input type="int" name="kode_pt" id="kode_pt" class="form-control" value="{{ $data_pt->kode_pt }}" maxlength="255">
                 </div>
 
                 <div class="form-group">

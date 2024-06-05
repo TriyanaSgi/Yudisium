@@ -29,7 +29,7 @@
                     @csrf
                     <div class="form-group">
                         <label for="id_batch">ID Batch</label>
-                        <input type="number" name="id_batch" id="id_batch" class="form-control">
+                        <input type="int" name="id_batch" id="id_batch" class="form-control">
                     </div>
 
                     <div class="form-group">
@@ -53,7 +53,7 @@
                     </div>
                     <div class="form-group">
                         <label for="ipk">Ipk</label>
-                        <input type="number" name="ipk" id="ipk" class="form-control">
+                        <input type="decimal" name="ipk" id="ipk" class="form-control">
                     </div>
 
                     <div class="form-group">
@@ -68,12 +68,17 @@
 
                     <div class="form-group">
                         <label for="kode_prodi">Kode Prodi</label>
-                        <input type="number" name="kode_prodi" id="kode_prodi" class="form-control">
+                        <input type="int" name="kode_prodi" id="kode_prodi" class="form-control">
                     </div>
 
                     <div class="form-group">
                         <label for="nama_prodi">Nama Prodi</label>
                         <input type="text" name="nama_prodi" id="nama_prodi" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nama_prodi">Nama Perguruan Tinggi</label>
+                        <input type="text" name="nama_pt" id="nama_pt" class="form-control">
                     </div>
 
                     

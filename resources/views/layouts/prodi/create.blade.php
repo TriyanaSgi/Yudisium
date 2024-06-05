@@ -34,12 +34,12 @@
 
                     <div class="form-group">
                         <label for="kode_prodi">Kode Prodi</label>
-                        <input type="number" name="kode_prodi" id="kode_prodi" class="form-control">
+                        <input type="int" name="kode_prodi" id="kode_prodi" class="form-control">
                     </div>
 
                     <div class="form-group">
                         <label for="kode_pt">Kode PT</label>
-                        <input type="text" name="kode_pt" id="kode_pt" class="form-control">
+                        <input type="int" name="kode_pt" id="kode_pt" class="form-control">
                     </div>
 
                     <div class="form-group">

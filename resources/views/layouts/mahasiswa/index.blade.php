@@ -57,6 +57,7 @@
                                 <th>Jumlah Cuti</th>
                                 <th>Kode Prodi</th>
                                 <th>Nama Prodi</th>
+                                <th>Nama Perguruan Tinggi</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -73,6 +74,7 @@
                                     <td>{{ $item->jml_cuti }}</td>
                                     <td>{{ $item->kode_prodi }}</td>
                                     <td>{{ $item->nama_prodi }}</td>
+                                    <td>{{ $item->nama_pt }}</td>
                                     
 
                                     <td>

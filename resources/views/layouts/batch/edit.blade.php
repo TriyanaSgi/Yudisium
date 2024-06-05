@@ -25,7 +25,7 @@
                     @method('PUT')
                     <div class="form-group">
                         <label for="id_batch">ID Batch</label>
-                        <input type="text" name="id_batch" class="form-control" value="{{ $batch->id_batch }}" required>
+                        <input type="int" name="id_batch" class="form-control" value="{{ $batch->id_batch }}" required>
                     </div>
                     <div class="form-group">
                         <label for="nama_mhs">Nama Mahasiswa</label>
@@ -33,7 +33,7 @@
                     </div>
                     <div class="form-group">
                         <label for="tahun_angkatan">Tahun Angkatan</label>
-                        <input type="text" name="tahun_angkatan" class="form-control" value="{{ $batch->tahun_angkatan }}" required>
+                        <input type="year" name="tahun_angkatan" class="form-control" value="{{ $batch->tahun_angkatan }}" required>
                     </div>
                     <div class="form-group">
                         <label for="program_studi">Program Studi</label>
@@ -48,11 +48,11 @@
                     </div>
                     <div class="form-group">
                         <label for="sks">SKS</label>
-                        <input type="text" name="sks" class="form-control" value="{{ $batch->sks }}" required>
+                        <input type="int" name="sks" class="form-control" value="{{ $batch->sks }}" required>
                     </div>
                     <div class="form-group">
                         <label for="ipk">IPK</label>
-                        <input type="text" name="ipk" class="form-control" value="{{ $batch->ipk }}" required>
+                        <input type="decimal" name="ipk" class="form-control" value="{{ $batch->ipk }}" required>
                     </div>
                     <div class="form-group">
                         <label for="upload">Upload File</label>

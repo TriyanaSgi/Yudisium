@@ -23,5 +23,11 @@ class mahasiswa extends Model
         'jml_cuti',
         'kode_prodi',
         'nama_prodi',
+        'nama_pt',
     ];
+
+    public function batch()
+    {
+        return $this->belongsTo(batch::class, 'id_batch');
+    }
 }

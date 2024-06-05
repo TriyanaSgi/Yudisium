@@ -24,7 +24,7 @@
                     @csrf
                     <div class="form-group">
                         <label for="id_batch">ID Batch</label>
-                        <input type="text" name="id_batch" class="form-control" required>
+                        <input type="int" name="id_batch" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label for="nama_mhs">Nama Mahasiswa</label>
@@ -32,11 +32,11 @@
                     </div>
                     <div class="form-group">
                         <label for="tahun_angkatan">Tahun Angkatan</label>
-                        <input type="number" name="tahun_angkatan" class="form-control" required>
+                        <input type="year" name="tahun_angkatan" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label for="program_studi">Program Studi</label>
-                        <input type="text" name="program_studi" class="form-control" required>
+                        <input type="varchar" name="program_studi" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label for="status">Status</label>
@@ -47,11 +47,11 @@
                     </div>
                     <div class="form-group">
                         <label for="sks">SKS</label>
-                        <input type="text" name="sks" class="form-control" required>
+                        <input type="int" name="sks" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label for="ipk">IPK</label>
-                        <input type="text" name="ipk" class="form-control" required>
+                        <input type="decimal" name="ipk" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label for="upload">Upload File</label>
