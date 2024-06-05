@@ -19,18 +19,28 @@
                 Berikut adalah biodata mahasiswa untuk verifikasi data.
             </p>
 
-            <div class="row">
+            <!-- Search Form -->
+            <form action="{{ route('mahasiswa.verifikasi') }}" method="GET">
+                <div class="form-group">
+                    <label for="search">Cari Mahasiswa</label>
+                    <input type="text" name="search" class="form-control" id="search" placeholder="Cari berdasarkan NIM atau Nama">
+                </div>
+                <button type="submit" class="btn btn-primary">Cari</button>
+            </form>
+
+            @foreach($mahasiswa as $mhs)
+            <div class="row mt-4">
                 <div class="col-12 col-md-6">
                     <div class="card">
                         <div class="card-header">
                             <h4>Informasi Dasar</h4>
                         </div>
                         <div class="card-body">
-                            <p><strong>Nama:</strong> John Doe</p>
-                            <p><strong>NIM:</strong> 123456789</p>
+                            <p><strong>Nama:</strong> {{ $mhs->nama_mhs }}</p>
+                            <p><strong>NIM:</strong> {{ $mhs->nim_mhs }}</p>
                             <p><strong>Fakultas:</strong> Teknik</p>
-                            <p><strong>Program Studi:</strong> Teknik Informatika</p>
-                            <p><strong>Semester:</strong> 6</p>
+                            <p><strong>Program Studi:</strong> {{ $mhs->nama_prodi }}</p>
+                            <p><strong>Semester:</strong> {{ $mhs->jml_smstr_aktif }}</p>
                         </div>
                     </div>
                 </div>
@@ -42,17 +52,18 @@
                         </div>
                         <div class="card-body">
                             <ul>
+                                <!-- Example static data -->
                                 <li><strong>2020/2021:</strong> Aktif</li>
                                 <li><strong>2019/2020:</strong> Cuti</li>
                                 <li><strong>2018/2019:</strong> Aktif</li>
-                                <!-- Tambahkan status lainnya sesuai data -->
+                                <!-- You can add dynamic data here if available -->
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="row">
+            <div class="row mt-4">
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
@@ -69,6 +80,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <!-- Example static data -->
                                     <tr>
                                         <td>TI101</td>
                                         <td>Pemrograman Dasar</td>
@@ -81,13 +93,15 @@
                                         <td>1</td>
                                         <td>B+</td>
                                     </tr>
-                                    <!-- Tambahkan riwayat studi lainnya sesuai data -->
+                                    <!-- You can add dynamic data here if available -->
                                 </tbody>
                             </table>
                         </div>
                     </div>
                 </div>
             </div>
+            @endforeach
+
         </div>
     </section>
 </div>

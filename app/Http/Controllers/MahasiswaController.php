@@ -30,11 +30,23 @@ class MahasiswaController extends Controller
     }
 
 
-    public function verifikasi()
+    public function verifikasi(Request $request)
     {
-        return view('layouts.mahasiswa.verifikasi');
+        $search = $request->get('search');
+        
+        $query = mahasiswa::query();
+        
+        if ($search) {
+            $query->where('nim_mhs', 'like', "%{$search}%")
+                  ->orWhere('nama_mhs', 'like', "%{$search}%");
+        }
+        
+        $data['mahasiswa'] = $query->get();
+        
+        return view('layouts.mahasiswa.verifikasi', $data);
     }
-
+    
+    
     /**
      * Store a newly created resource in storage.
      */
