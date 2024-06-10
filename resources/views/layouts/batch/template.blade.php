@@ -29,7 +29,7 @@
                     <table class="table table-bordered">
                         <thead>
                             <tr>
-                                <th>Upload File</th>
+                                <th>Template File</th>
                             </tr>
                         </thead>
                         <tbody>
