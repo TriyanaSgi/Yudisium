@@ -36,7 +36,7 @@
                                 </form>
                             </div>
                                 <div class="input-group">
-                                    <input type="text" name="search" class="form-control" placeholder="Cari Berdasarkan ID Mahasiswa...">
+                                    <input type="text" name="search" class="form-control" placeholder="Cari Berdasarkan Nama Mahasiswa...">
                                     <div class="input-group-append">
                                         <button class="btn btn-primary" style="margin-left:5px;" type="submit">Search</button>
                                     </div>
@@ -78,8 +78,8 @@
                                     
 
                                     <td>
-                                        <a href="{{ route('mahasiswa.edit', $item->id_batch) }}" class="btn btn-primary">Edit</a>
-                                        <form action="{{ route('mahasiswa.delete', $item->id_batch) }}" method="POST" style="display: inline-block;">
+                                        <a href="{{ route('mahasiswa.edit', $item->nama_mhs) }}" class="btn btn-primary">Edit</a>
+                                        <form action="{{ route('mahasiswa.delete', $item->nama_mhs) }}" method="POST" style="display: inline-block;">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-danger">Delete</button>

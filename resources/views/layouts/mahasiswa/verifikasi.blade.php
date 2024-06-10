@@ -71,25 +71,17 @@
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
-                                        <th>Kode Mata Kuliah</th>
-                                        <th>Nama Mata Kuliah</th>
-                                        <th>Semester</th>
+                                        <th>Jumlah Semester Aktif</th>
+                                        <th>Jumlah Cuti</th>
                                         <th>Nilai</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <!-- Example static data -->
                                     <tr>
-                                        <td>TI101</td>
-                                        <td>Pemrograman Dasar</td>
-                                        <td>1</td>
-                                        <td>A</td>
-                                    </tr>
-                                    <tr>
-                                        <td>TI102</td>
-                                        <td>Matematika Diskrit</td>
-                                        <td>1</td>
-                                        <td>B+</td>
+                                        <td>{{ $mhs->jml_smstr_aktif }}</td>
+                                        <td>{{ $mhs->jml_cuti }}</td>
+                                        <td>{{ $mhs->ipk }}</td>
                                     </tr>
                                     <!-- You can add dynamic data here if available -->
                                 </tbody>

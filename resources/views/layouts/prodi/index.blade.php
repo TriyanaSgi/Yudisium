@@ -31,7 +31,7 @@
                             <a href="{{ route('prodi.create') }}" class="btn btn-primary mb-3">Tambah Data</a>
                             <form action="{{ route('prodi.index') }}" method="GET">
                                 <div class="input-group">
-                                    <input type="text" name="search" class="form-control" placeholder="Cari Berdasarkan ID Prodi...">
+                                    <input type="text" name="search" class="form-control" placeholder="Cari Berdasarkan Kode Prodi...">
                                     <div class="input-group-append">
                                         <button class="btn btn-primary" style="margin-left:5px;" type="submit">Search</button>
                                     </div>
