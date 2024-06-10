@@ -28,8 +28,13 @@
                 <div class="table-responsive">
                     <div class="row mb-3">
                         <div class="col-md-6">
-                            <a href="{{ route('batch.create') }}" class="btn btn-primary mb-3">Tambah Data</a>
-                            <form action="{{ route('batch.index') }}" method="GET">
+                            <div class="d-flex align-items-center mb-3">
+                                <a href="{{ route('batch.create') }}" class="btn btn-primary me-2">Tambah Data</a>
+                                <form action="{{ route('batch.index') }}" method="GET" class="d-flex">
+                                    <!-- Tambahkan input lain jika perlu -->
+                                    <a href="{{ route('batch.template') }}" class="btn btn-primary me-2">Template Yudisium</a>
+                                </form>
+                            </div>
                                 <div class="input-group">
                                     <input type="text" name="search" class="form-control" placeholder="Cari Berdasarkan ID Batch...">
                                     <div class="input-group-append">

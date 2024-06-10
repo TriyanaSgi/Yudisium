@@ -30,6 +30,25 @@ class BatchController extends Controller
         return view('layouts.batch.create');
     }
 
+    public function template(Request $request)
+    {
+        $search = $request->get('search');
+
+        $query = batch::with('batch');
+        
+        $query = batch::query();
+        
+        if ($search) {
+            $query->where('nim_mhs', 'like', "%{$search}%")
+                  ->orWhere('nama_mhs', 'like', "%{$search}%");
+        }
+        
+        $data['mahasiswa'] = $query->get();
+        $data['batch'] = $query->get();
+        
+        return view('layouts.batch.template', $data);
+    }
+
     /**
      * Store a newly created resource in storage.
      */
