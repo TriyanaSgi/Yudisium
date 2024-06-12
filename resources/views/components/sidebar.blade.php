@@ -39,7 +39,7 @@
 
             @if (auth()->user()->role == 'superadmin')
             <li class="{{ Request::is('hakakses/') ? 'active' : '' }}">
-                <a class="nav-link" href="{{ url('hakakses/') }}"><i class="fas fa-key"></i> <span>Hak Akses</span></a>
+                <a class="nav-link" href="{{ url('hakakses/') }}"><i class="fas fa-low-vision"></i> <span>Hak Akses</span></a>
             </li>
             @endif
 
