@@ -26,10 +26,12 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/batch', [App\Http\Controllers\BatchController::class, 'index'])->name('batch.index');
     Route::get('/batch/create', [App\Http\Controllers\BatchController::class, 'create'])->name('batch.create');
     Route::post('/batch/store', [App\Http\Controllers\BatchController::class, 'store'])->name('batch.store');
-    Route::put('/batch/edit/{id}', [App\Http\Controllers\BatchController::class, 'edit'])->name('batch.edit');
+    Route::get('/batch/edit/{id}', [App\Http\Controllers\BatchController::class, 'edit'])->name('batch.edit');
     Route::put('/batch/update/{id}', [App\Http\Controllers\BatchController::class, 'update'])->name('batch.update');
     Route::delete('/batch/delete/{id}', [App\Http\Controllers\BatchController::class, 'destroy'])->name('batch.delete');
-    Route::get('/template', [App\Http\Controllers\BatchController::class, 'template'])->name('batch.template');
+    Route::get('/template', [App\Http\Controllers\BatchController::class, 'template'])->name('batch.template'); 
+    Route::get('/batch/import', [App\Http\Controllers\BatchController::class, 'import'])->name('batch.import');
+    Route::post('/batch/import', [App\Http\Controllers\BatchController::class, 'import_post'])->name('batch.import.post');
 
     Route::get('/mahasiswa', [App\Http\Controllers\MahasiswaController::class, 'index'])->name('mahasiswa.index');
     Route::get('/mahasiswa/create', [App\Http\Controllers\MahasiswaController::class, 'create'])->name('mahasiswa.create');
@@ -38,6 +40,9 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/mahasiswa/update/{id}', [App\Http\Controllers\MahasiswaController::class, 'update'])->name('mahasiswa.update');
     Route::delete('/mahasiswa/delete/{id}', [App\Http\Controllers\MahasiswaController::class, 'destroy'])->name('mahasiswa.delete');
     Route::get('/verifikasi', [App\Http\Controllers\MahasiswaController::class, 'verifikasi'])->name('mahasiswa.verifikasi');
+    Route::get('/mahasiswa/import', [App\Http\Controllers\MahasiswaController::class, 'import'])->name('mahasiswa.import');
+    Route::post('/mahasiswa/import', [App\Http\Controllers\MahasiswaController::class, 'import_post']);
+
 
 
     Route::get('/prodi', [App\Http\Controllers\ProdiController::class, 'index'])->name('prodi.index');

@@ -52,7 +52,7 @@
                     </div>
                     <div class="form-group">
                         <label for="ipk">IPK</label>
-                        <input type="decimal" name="ipk" class="form-control" value="{{ $batch->ipk }}" required>
+                        <input type="varchar" name="ipk" class="form-control" value="{{ $batch->ipk }}" required>
                     </div>
                     <div class="form-group">
                         <label for="upload">Upload File</label>

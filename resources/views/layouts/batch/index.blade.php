@@ -33,6 +33,7 @@
                                 <form action="{{ route('batch.index') }}" method="GET" class="d-flex">
                                     <!-- Tambahkan input lain jika perlu -->
                                     <a href="{{ route('batch.template') }}" class="btn btn-primary me-2">Template Yudisium</a>
+                                    <a href="{{ route('batch.import') }}" class="btn btn-primary me-2">Import Yudisium</a>
                                 </form>
                             </div>
                                 <div class="input-group">

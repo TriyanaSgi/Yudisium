@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class batch extends Model
+class Batch extends Model
 {
     use HasFactory;
 
@@ -20,5 +20,6 @@ class batch extends Model
         'status',
         'sks',
         'ipk',
-    ];
+        'upload',
+];
 }

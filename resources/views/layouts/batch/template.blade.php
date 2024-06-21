@@ -35,7 +35,7 @@
                         <tbody>
                                 <tr>
                                     <td>
-                                            <a href="{{ "http://127.0.0.1:8000/tempublic/template.docx" }}" target="_blank">Unduh File</a>
+                                            <a href="{{ "http://127.0.0.1:8000/tempublic/template.xlsx" }}" target="_blank">Unduh File</a>
                                     </td>
                                 </tr>
                         </tbody>
