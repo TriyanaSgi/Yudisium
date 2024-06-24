@@ -77,30 +77,33 @@ class ProdiController extends Controller
      * Update the specified resource in storage.
      */
     public function update(Request $request, $id)
-    {
-        $data_prodi = prodi::find($id);
-        if (!$data_prodi) {
-            return redirect()->back()->with('error', 'PT tidak ditemukan');
-        }
-    
-        try {
-            $validatedData = $request->validate([
-                'nama_prodi' => 'required',
-                'kode_prodi' => 'required',
-                'kode_pt' => 'required',
-                'nama_pt' => 'required',
-            ]);
-            $data_prodi->nama_prodi = $request->nama_prodi;
-            $data_prodi->kode_prodi = $request->kode_prodi;
-            $data_prodi->kode_pt = $request->kode_pt;
-            $data_prodi->nama_pt = $request->nama_pt;
-            $data_prodi->save();
-    
-            return redirect()->route('prodi.index')->with('message', 'Edit Data Berhasil');
-        } catch (\Exception $e) {
-            return redirect()->back()->with('error', 'Edit Data Gagal');
-        }
+{
+    $data_prodi = prodi::find($id);
+    if (!$data_prodi) {
+        return redirect()->back()->with('error', 'Data Prodi tidak ditemukan');
     }
+
+    try {
+        $validatedData = $request->validate([
+            'nama_prodi' => 'required|string|max:255',
+            'kode_prodi' => 'required|integer',
+            'kode_pt' => 'required|integer',
+            'nama_pt' => 'required|string|max:255',
+        ]);
+
+        $data_prodi->nama_prodi = $request->nama_prodi;
+        $data_prodi->kode_prodi = $request->kode_prodi;
+        $data_prodi->kode_pt = $request->kode_pt;
+        $data_prodi->nama_pt = $request->nama_pt;
+        $data_prodi->save();
+
+        return redirect()->route('prodi.index')->with('message', 'Edit Data Berhasil');
+    } catch (\Exception $e) {
+        return redirect()->back()->with('error', 'Edit Data Gagal');
+    }
+}
+
+
 
     /**
      * Remove the specified resource from storage.
