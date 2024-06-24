@@ -15,7 +15,6 @@
             <form action="{{ route('mahasiswa.update', $mahasiswa->id_batch) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
-
                 <div class="form-group">
                     <label for="id_batch">ID Batch</label>
                     <input type="text" name="id_batch" id="id_batch" class="form-control" value="{{ $mahasiswa->id_batch }}" maxlength="255">
@@ -28,7 +27,7 @@
 
                 <div class="form-group">
                     <label for="nama_mhs">Nama Mahasiswa</label>
-                    <input type="number" name="nama_mhs" id="nama_mhs" class="form-control" value="{{ $mahasiswa->nama_mhs }}" maxlength="255">
+                    <input type="text" name="nama_mhs" id="nama_mhs" class="form-control" value="{{ $mahasiswa->nama_mhs }}" maxlength="255">
                 </div>
 
                 <div class="form-group">

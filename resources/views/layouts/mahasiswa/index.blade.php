@@ -33,6 +33,7 @@
                                 <form action="{{ route('mahasiswa.index') }}" method="GET" class="d-flex">
                                     <!-- Tambahkan input lain jika perlu -->
                                     <a href="{{ route('mahasiswa.verifikasi') }}" class="btn btn-primary me-2">Verifikasi Mahasiswa</a>
+                                    <a href="{{ route('mahasiswa.import') }}" class="btn btn-primary me-2">Import Yudisium</a>
                                 </form>
                             </div>
                                 <div class="input-group">
@@ -78,8 +79,8 @@
                                     
 
                                     <td>
-                                        <a href="{{ route('mahasiswa.edit', $item->nama_mhs) }}" class="btn btn-primary">Edit</a>
-                                        <form action="{{ route('mahasiswa.delete', $item->nama_mhs) }}" method="POST" style="display: inline-block;">
+                                        <a href="{{ route('mahasiswa.edit', $item->id_batch) }}" class="btn btn-primary">Edit</a>
+                                        <form action="{{ route('mahasiswa.delete', $item->id_batch) }}" method="POST" style="display: inline-block;">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-danger">Delete</button>

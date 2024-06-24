@@ -39,7 +39,6 @@ class PtController extends Controller
             'nama_pt' => 'required',
         ]);
 
-        
             $data_pt = new pt();
             $data_pt->kode_pt = $request->kode_pt;
             $data_pt->nama_pt = $request->nama_pt;

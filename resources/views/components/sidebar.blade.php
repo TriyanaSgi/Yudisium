@@ -43,7 +43,7 @@
             </li>
             @endif
 
-            <li class="menu-header">Starter</li>
+            <li class="menu-header">Data</li>
 
             @if (auth()->user()->role == 'pt' || auth()->user()->role == 'superadmin')
             <li class="{{ Request::is('batch') ? 'active' : '' }}">

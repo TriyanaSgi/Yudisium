@@ -1,6 +1,6 @@
 <footer class="main-footer">
     <div class="footer-left">
-        &copy; 2024
+        &copy; 2024 MSIB 6
     </div>
     <div class="footer-right">
         1.0.0
