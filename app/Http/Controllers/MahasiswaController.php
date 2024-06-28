@@ -115,16 +115,6 @@ class MahasiswaController extends Controller
             'nama_pt' => 'required',
         ]);
 
-        if ($request->hasFile('upload')) {
-            $file = $request->file('upload');
-            $filename = time() . '_' . $file->getClientOriginalName();
-            $path = $file->move(public_path('filemahasiswa'), $filename);
-            \Log::info('File uploaded', ['filename' => $filename]);
-        } else {
-            \Log::error('Failed to upload file');
-            return redirect()->back()->with('error', 'Gagal mengunggah file.');
-        }
-
         $mahasiswa = new mahasiswa();
         $mahasiswa->id_batch = $request->id_batch;
         $mahasiswa->nim_mhs = $request->nim_mhs;
@@ -137,7 +127,6 @@ class MahasiswaController extends Controller
         $mahasiswa->kode_prodi = $request->kode_prodi;
         $mahasiswa->nama_prodi = $request->nama_prodi;
         $mahasiswa->nama_pt = $request->nama_pt;
-        $mahasiswa->upload = 'filemahasiswa/' . $filename;
 
         if ($mahasiswa->save()) {
             \Log::info('Mahasiswa stored successfully', ['mahasiswa' => $mahasiswa]);
@@ -188,19 +177,6 @@ class MahasiswaController extends Controller
             'nama_prodi' => 'required',
             'nama_pt' => 'required',
         ]);
-
-        if ($request->hasFile('upload')) {
-            // Delete old file
-            if ($mahasiswa->upload && file_exists(public_path($mahasiswa->upload))) {
-                unlink(public_path($mahasiswa->upload));
-            }
-            // Store new file
-            $file = $request->file('upload');
-            $filename = time() . '_' . $file->getClientOriginalName();
-            $path = $file->move(public_path('filemahasiswa'), $filename);
-            $mahasiswa->upload = 'filemahasiswa/' . $filename;
-            \Log::info('New file uploaded', ['filename' => $filename]);
-        }
 
         $mahasiswa->id_batch = $request->id_batch;
         $mahasiswa->nim_mhs = $request->nim_mhs;
