@@ -33,7 +33,6 @@
                                 <form action="{{ route('mahasiswa.index') }}" method="GET" class="d-flex">
                                     <!-- Tambahkan input lain jika perlu -->
                                     <a href="{{ route('mahasiswa.verifikasi') }}" class="btn btn-primary me-2">Verifikasi Mahasiswa</a>
-                                    <a href="{{ route('mahasiswa.import') }}" class="btn btn-primary me-2">Import Yudisium</a>
                                 </form>
                             </div>
                                 <div class="input-group">

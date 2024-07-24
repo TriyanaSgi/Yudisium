@@ -10,7 +10,7 @@
     <div class="main-content">
         <section class="section">
             <div class="section-header">
-                <h1>Cek Data Mahasiswa Yudisium</h1>
+                <h1>Data Mahasiswa Yudisium</h1>
             </div>
 
             @if (session('message'))
@@ -53,7 +53,7 @@
                     </div>
                     <div class="form-group">
                         <label for="ipk">Ipk</label>
-                        <input type="decimal" name="ipk" id="ipk" class="form-control">
+                        <input type="varchar" name="ipk" id="ipk" class="form-control">
                     </div>
 
                     <div class="form-group">

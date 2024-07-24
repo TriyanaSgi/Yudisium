@@ -90,7 +90,7 @@ https://templatemo.com/tm-543-breezed
                 <img src="assets/images/avatar03.png" alt="">
                 <div class="text-content">
                   <h3>SISPEK YUDISIUM</h3>
-                  <h5>Sistem Pemeriksaan Persyaratan Kelulusan Yudisium</h5>
+                  <h5>Sistem Pemeriksaan Kelulusan Yudisium</h5>
                   <a href="{{ route('login') }}" class="main-stroked-button">Login</a>
                   <a href="{{ route('register') }}" class="main-filled-button">Register</a>
                 </div>

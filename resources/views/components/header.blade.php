@@ -11,12 +11,12 @@
             <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
                 <img alt="image" src="{{ asset('img/avatar/avatar-1.png') }}" class="rounded-circle mr-1">
                 <div class="d-sm-none d-lg-inline-block">
-                    Hai, {{ auth()->check() ? substr(auth()->user()->name, 0, 10) : 'Tamu' }}
+                    Hai, {{ auth()->check() ? substr(auth()->user()->name, 0, 100) : 'Tamu' }}
                 </div>
             </a>
             <div class="dropdown-menu dropdown-menu-right">
                 <div class="dropdown-title">
-                    Selamat Datang, {{ auth()->check() ? substr(auth()->user()->name, 0, 10) : 'Tamu' }}
+                    Selamat Datang, {{ auth()->check() ? substr(auth()->user()->name, 0, 100) : 'Tamu' }}
                 </div>
                 <a class="dropdown-item has-icon edit-profile" href="{{ route('profile.edit') }}" data-id="{{ \Auth::id() }}">
                     <i class="fa fa-user"></i> Edit Profile

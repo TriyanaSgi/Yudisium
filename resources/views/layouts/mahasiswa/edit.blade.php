@@ -42,7 +42,7 @@
 
                 <div class="form-group">
                     <label for="ipk">IPK</label>
-                    <input type="number" name="ipk" id="ipk" class="form-control" value="{{ $mahasiswa->ipk }}" maxlength="255">
+                    <input type="varchar" name="ipk" id="ipk" class="form-control" value="{{ $mahasiswa->ipk }}" maxlength="255">
                 </div>
 
                 <div class="form-group">
