@@ -24,14 +24,14 @@
         @endif
 
             <!-- profile ganti password -->
-            @if (auth()->user()->role == 'superadmin')
+            @if (auth()->user()->role == 'superadmin' || auth()->user()->role == 'pt' || auth()->user()->role == 'mahasiswa')
             <li class="menu-header">Profile</li>
             <li class="{{ Request::is('profile/edit') ? 'active' : '' }}">
                 <a class="nav-link" href="{{ url('profile/edit') }}"><i class="far fa-user"></i> <span>Profile</span></a>
             </li>
             @endif
 
-            @if (auth()->user()->role == 'superadmin')
+            @if (auth()->user()->role == 'superadmin' || auth()->user()->role == 'pt' || auth()->user()->role == 'mahasiswa')
             <li class="{{ Request::is('profile/change-password') ? 'active' : '' }}">
                 <a class="nav-link" href="{{ url('profile/change-password') }}"><i class="fas fa-key"></i> <span>Ganti Password</span></a>
             </li>
